@@ -9,7 +9,6 @@ body {
 
 
 
-
 /*========HEADER ALL PAGES========*/
 
 header {
@@ -41,8 +40,6 @@ header h3 {
 
 
 
-
-
 /*==========BODY  ALL PAGES========*/
 
 body {
@@ -52,8 +49,6 @@ body {
     background-color: #f3ddb9;
     margin-top: 10px;
 }
-
-
 
 
 
@@ -83,8 +78,6 @@ nav li {
 #toggle:checked ~ #menu {
     display: block;
 }
-
-
 
 
 
@@ -124,29 +117,24 @@ nav li a:active {
 
 
 
-
-
 /*================MAIN================*/
 
 #container {
-    display: grid;
-    grid-template-columns: auto auto;
+    width: 100%;
+    display: grid; 
+    grid-template-columns: auto auto;  
     grid-column-gap: 5%;
-    align-items: center;
-    padding: 2%;
-}
+    align-items: center; 
+	}
+	
+	.container-img {
+		grid-column-start: 1; 
+		grid-column-end: 2;
+	}
 
-.img {
-    grid-column-start: 1;
-    width: 100%;
-    height: auto;
-}
-
-
-.text {
-    padding-right: 10%;
-    width: 100%;
-    height: auto;
+	.container-text {
+		padding-right: 10%; 	
+	}
 }
 
 
@@ -173,26 +161,8 @@ h2::first-letter {
 
 
 
-
-
-/*================ASSIGNMENTS PAGE ================*/
-#assignment-landing {
-    padding: 0px;
-    margin-bottom: 100px;
-}
-
-#assignment-landing h1 {
-    margin: 0px;
-}
-
-#assignment-landing ul {
-    margin: 0px;
-}
-
-
-
-
 /*==========FOOTER STYLE- ALL PAGES========*/
+
 footer {
     padding-bottom: 40px;
     background-color: #52bbc7;
@@ -253,70 +223,55 @@ footer p {
 
 
 
-
-/*FOR LARGE SCREEN DISPLAY*/
 /*Media Query - regular/desktop view applied when the screen is large*/
+
 @media (min-width: 530px) {
     nav label,
     #toggle {
         display: none;
     }
-
     #toggle:not(:checked) ~ #menu {
         display: block;
     }
-
     #menu li {
         display: inline-block;
     }
-
+    
     #container {
-        display: grid;
-        grid-template-columns: auto auto auto;
+        display: grid; 
+        grid-template-columns: auto auto auto;  
         grid-column-gap: 5%;
-        align-items: center;
-    }
+        align-items: center; 
+	}
+	
+	.container-img {
+		grid-column-start: 1; 
+		grid-column-end: 2;
+        max-width: 100%;
+	}
 
-    .img {
-        display: block;
-        grid-column-start: 1;
-        grid-column-end: 2;
-        /*width:30px;
-        height:5px;*/
-        /*width: auto;
-        height: auto;*/
-        /*width: 100%;
-        height: auto;*/
-    }
-
-    .text {
-        padding-right: 10%;
-    }
-
+	.container-text {
+		padding-right: 10%; 	
+	}
 
     nav li:nth-child(3) {
         margin-left: 15px;
     }
-
     footer {
         height: 90px;
     }
-
     footer ul {
         margin-top: -80px;
         /*height: 55px;*/
     }
-
     footer li a {
         font-size: .9em;
     }
-
     footer p {
         font-size: .7em;
         padding: 0px;
         margin-bottom: 5px;
     }
-
     #copy,
     #kim,
     byui {
@@ -324,17 +279,14 @@ footer p {
         font-size: .8em;
         padding: 5px;
     }
-
     #copy {
-        color: forestgreen;
-        margin: 20px 30px -80px 40px;
+        color:forestgreen;
+        margin: 20px 30px -80px 40px; 
     }
-
     #kim {
         color: blue;
         margin: 25px 25px -80px -25px;
     }
-
     #byui {
         color: deeppink;
         font-size: .8em;
@@ -343,9 +295,11 @@ footer p {
 }
 
 
-/*SMALL SCREEN VIEW*/
+
+
 /* Media Query - mobile view styling*/
 /***snap menu background-color = dark green***/
+
 @media screen and (max-width: 530px) {
     nav label {
         background-color: #86af49;
@@ -355,71 +309,23 @@ footer p {
         display: block;
         margin: 20px 0 0 0;
     }
-
     nav li {
         display: block;
         text-align: center;
         width: 100%;
     }
-
     nav li a {
         padding: 10px 0px;
         margin: 0px;
         width: 100%;
         font-size: 15px;
     }
-    
+
     #container {
-        display: -webkit-flex;
-        display: flex;
-        -webkit-flex-flow: row wrap;
-        flex-flow: row wrap;
-        margin: 0px;
+    display: flex;
+    flex-flow: row wrap;
     }
     
-    .img {
-        display: -webkit-flex;
-        display: flex;
-        -webkit-flex-flow: row wrap;
-        flex-flow: row wrap;
-        width: 100%;
-        height: auto;
-        }
-
-    .text {
-        padding: 2%;
-    }
-    
-    /*.text {
-        display: flex;
-        font-size: .2em;
-        margin-left: 2px;
-        padding: 1%;
-        margin-top: 10px;
-    }
-*/
-    
-        /*text-align: left*/
-        /*flex-direction: column!important;*/
-        /*flex-wrap: no-wrap;
-        }*/
-
-    
-    /*img {
-        display: flex;
-        width: 100%;
-        height: auto;
-    }*/
-    
-
-   #text {
-        display: flex;
-        font-size: .2em;
-        margin-left: 2px;
-        padding: 2%;
-        width: 100%;
-        height: auto;
-    }
 
     footer {
         height: 90px;
@@ -434,6 +340,7 @@ footer p {
         font-size: .6em;
     }
 
+
     footer p {
         font-size: .5em;
         padding: 5px;
@@ -442,4 +349,6 @@ footer p {
     nav input {
         display: none;
     }
+
+
 }
