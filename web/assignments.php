@@ -26,7 +26,7 @@
         <div id="assignment-landing">
             <h1>Software Engineering II Assignments</h1>
             <ul>
-                <li><a href="01-prove.php">Week 1  Prove Assignment</a></li>
+                <li><a href="hello.php">Week 1  Prove Assignment</a></li>
                 <li><a href="02-teach.php">Week 2 Teach Assignment</a></li>
                 <li><a href="index.php">Week 2 Prove Assignment</a></li>
                 <li><a href="">Week 3 Assignment</a></li>
