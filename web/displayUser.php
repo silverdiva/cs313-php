@@ -11,4 +11,5 @@
         echo $ContinentNames[$continent]." ";
     }
     echo "<br>Comments: ".$_POST['Comments']."<br>";
+
 ?>
