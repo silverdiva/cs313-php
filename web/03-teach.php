@@ -53,7 +53,7 @@
                 
            
             <div container="03-form">
-                    <form action="displayUser.php" method="post">
+                    <form action="displayuser.php" method="post">
                     <input type="text" name="Name" placeholder="Name"> <br>
                     <input type="text" name="Email" placeholder="Email"> <br>
                     <label>Major</label> <br>
