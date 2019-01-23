@@ -1,3 +1,7 @@
+/*======PRODUCTION CSS FILE==========*/
+
+
+
 @import url('https://fonts.googleapis.com/css?family=Cookie');
 @import url('https://fonts.googleapis.com/css?family=Karma');
 
@@ -5,8 +9,6 @@ body {
     box-sizing: border-box;
     margin: 0;
 }
-
-
 
 
 
@@ -39,10 +41,6 @@ header h3 {
 
 
 
-
-
-
-
 /*==========BODY  ALL PAGES========*/
 
 body {
@@ -52,8 +50,6 @@ body {
     background-color: #f3ddb9;
     margin-top: 10px;
 }
-
-
 
 
 
@@ -83,8 +79,6 @@ nav li {
 #toggle:checked ~ #menu {
     display: block;
 }
-
-
 
 
 
@@ -124,20 +118,26 @@ nav li a:active {
 
 
 
-
-
 /*================MAIN================*/
+
+main {
+    height: auto;
+}
+
 
 #container {
     display: grid;
     grid-template-columns: auto auto;
     grid-column-gap: 5%;
     align-items: center;
-    padding: 2%;
+    /*padding: 2%;*/
+    padding: 0 6% 20% 2%;
+    height: auto;
 }
 
 .img {
     grid-column-start: 1;
+    grid-column-end: 2;
     width: 100%;
     height: auto;
 }
@@ -172,6 +172,38 @@ h2::first-letter {
 }
 
 
+/*===========02Teach.html==========*/
+container {
+    height: auto;
+}
+
+.container-text {
+    padding-bottom: 10%;
+    margin: auto;
+    height: auto;
+}
+
+
+.div-first {
+	background-color: #00BCD4;
+	font-size: 2em;
+}
+
+.div-later {
+	font-size: 0.7em;
+}
+
+#div2 {
+	background-color: #4DD0E1;
+}
+
+#div3 {
+	background-color: #B2EBF2;
+}
+
+.hover-bold:hover {
+	font-weight: bold;
+}
 
 
 
@@ -190,6 +222,34 @@ h2::first-letter {
 }
 
 
+#assignment-landing li a {
+    text-decoration: underline;
+    font-weight: 500; 
+    color: #977360;
+    padding: %;
+}
+
+#assignment-landing li {
+     padding: 2px;
+}
+
+/*#assignment-landing li a:visited {
+    color: #2c7e87;
+}*/
+
+
+#assignment-landing li a:hover {
+    color: #52bbc7;
+}
+
+#assignment-landing li a:active {
+    color: #000;
+}
+
+#assignment-landing li a:nth-child(even) { 
+    color: #52bbc7;
+    background: yellow;
+}
 
 
 /*==========FOOTER STYLE- ALL PAGES========*/
@@ -253,7 +313,6 @@ footer p {
 
 
 
-
 /*FOR LARGE SCREEN DISPLAY*/
 /*Media Query - regular/desktop view applied when the screen is large*/
 @media (min-width: 530px) {
@@ -281,12 +340,9 @@ footer p {
         display: block;
         grid-column-start: 1;
         grid-column-end: 2;
-        /*width:30px;
-        height:5px;*/
-        /*width: auto;
-        height: auto;*/
-        /*width: 100%;
-        height: auto;*/
+        padding-bottom: 10%;
+        margin: auto;
+        height: auto;
     }
 
     .text {
@@ -304,7 +360,6 @@ footer p {
 
     footer ul {
         margin-top: -80px;
-        /*height: 55px;*/
     }
 
     footer li a {
@@ -320,7 +375,6 @@ footer p {
     #copy,
     #kim,
     byui {
-        color: red;
         font-size: .8em;
         padding: 5px;
     }
@@ -389,28 +443,6 @@ footer p {
     .text {
         padding: 2%;
     }
-    
-    /*.text {
-        display: flex;
-        font-size: .2em;
-        margin-left: 2px;
-        padding: 1%;
-        margin-top: 10px;
-    }
-*/
-    
-        /*text-align: left*/
-        /*flex-direction: column!important;*/
-        /*flex-wrap: no-wrap;
-        }*/
-
-    
-    /*img {
-        display: flex;
-        width: 100%;
-        height: auto;
-    }*/
-    
 
    #text {
         display: flex;

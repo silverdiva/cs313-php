@@ -2,12 +2,7 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8" />
-    <meta name="description" content="CS 313 Assignments Page" />
-    <meta name="author" content="Kim Llanos">
-    <title>CS 313 | Assignments </title>
-    <link href="css/main.css" type="text/css" rel="stylesheet" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+   <?php include 'modules/head.php';?>
 </head>
 
 
@@ -17,6 +12,7 @@
             <h3>Kimberly Llanos</h3>
             <h1>CS 313:02 Assignments Page</h1>
         </div>
+        
         <nav>
            <?php include 'modules/nav.php';?>
         </nav>
@@ -26,38 +22,25 @@
         <div id="assignment-landing">
             <h1>Software Engineering II Assignments</h1>
             <ul>
-                <li><a href="hello.php">Week 1  Prove Assignment</a></li>
-                <li><a href="02-teach.php">Week 2 Teach Assignment</a></li>
+                <li><a href="01-prove.html">Week 1  Prove Assignment</a></li>
+                <li><a href="02-teach.php">Week 2 TEACH Assignment</a></li>
                 <li><a href="index.php">Week 2 Prove Assignment</a></li>
-                <li><a href="">Week 3 Assignment</a></li>
-                <li><a href="">Week 4 Assignment</a></li>
-                <li><a href="">Week 5 Assignment</a></li>
-                <li><a href="">Week 6 Assignment</a></li>
+                <li><a href="03-teach.php">Week 3 TEACH Assignment</a></li>
+                <li><a href="">Week 3 Prove Assignment</a></li>
+                <li><a href="">Week 4 TEACH Assignment</a></li>
+                <li><a href="">Week 4 Prove Assignment</a></li>
+                <li><a href="">Week 5 TEACH Assignment</a></li>
+                <li><a href="">Week 5 Prove Assignment</a></li>
+                <li><a href="">Week 6 TEACH Assignment</a></li>
+                <li><a href="">Week 6 Prove Assignment</a></li>
                 <li><a href="">Stay Tuned!!</a></li>
             </ul>
         </div>
     </main>
 
     <footer>
-       <div id="footer">
-            <ul class="footer">
-                <p>
-                    <a href="https://content.byui.edu/integ/gen/b2c03083-d8f7-4e7a-bb41-a5500ff41a44/0/cs313syllabus.html">CS 313:02 </a>
-                </p>
-                <p>
-                    Winter 2019
-                </p>
-                <p>
-                    Bro. Wilde
-                </p>
-            </ul>
-        </div>
-        
-        <p id="copy">Content &copy; 2019</p>
-        <p id="kim">Kimberly Llanos</p>
-        <p id="byui"><a href="https://www.byui.edu">BYU-Idaho</a></p>
-
-
+      <?php include 'modules/footer.php';?>
     </footer>
+    
 </body>
 </html>

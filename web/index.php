@@ -2,12 +2,7 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8" />
-    <meta name="description" content="CS 313 Landing Page" />
-    <meta name="author" content="Kim Llanos">
-    <title>CS 313 | Home </title>
-    <link href="css/main.css" type="text/css" rel="stylesheet" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+   <?php include 'modules/head.php';?>
 </head>
 
 
@@ -28,7 +23,7 @@
     <main>
         <div id="container">
             <div class="container-img">
-                <img src="images/pismo-mom-girls.jpg" alt="Family" title="girls">
+                <img src="images/rsz_pismo-mom-girls.jpg" alt="Family" title="girls">
             </div>
 
             <div clas="container-text">
@@ -43,22 +38,7 @@
     </main>
 
     <footer>
-        <div id="footer">
-            <ul class="footer">
-                <p>
-                    <a href="https://content.byui.edu/integ/gen/b2c03083-d8f7-4e7a-bb41-a5500ff41a44/0/cs313syllabus.html">CS 313:02 </a>
-                </p>
-                <p>
-                    Winter 2019
-                </p>
-                <p>
-                    Bro. Wilde
-                </p>
-            </ul>
-            <p id="copy">Content &copy; 2019</p>
-            <p id="kim">Kimberly Llanos</p>
-            <p id="byui"><a href="https://www.byui.edu">BYU-Idaho</a></p>
-        </div>
+       <?php include 'modules/footer.php';?>
     </footer>
 
     <!-- JavaScript using jQuery library -->
