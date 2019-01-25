@@ -6,8 +6,9 @@
     <meta name="description" content="CS 313 Landing Page" />
     <meta name="author" content="Kim Llanos">
     <title>CS 313 | Home </title>
-    <link href="css/main.css" type="text/css" rel="stylesheet" />
+    <link href="css/wking.css" type="text/css" rel="stylesheet" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="scripts/scripts.js"></script>
 </head>
 
 
@@ -18,7 +19,12 @@
             <h1>CS 313:02 Week 2 Teach</h1>
         </div>
         <nav>
-           <?php include 'modules/nav.php';?>
+            <label for="toggle">Show Menu</label>
+            <input id="toggle" type="checkbox">
+            <ul id="menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="assignments.html">Assignments</a></li>
+            </ul>
         </nav>
     </header>
 
@@ -32,8 +38,18 @@
                     <br> *CSS: hovering over any of the 3 divs causes the text to temporarily become bold
                     <br> *create custom color function: add user-input textbox labeled "Change color" that sets the color of the first div
                     <br> *add button to toggle the visibility of the third div. using jQuery to make it slowly fade in and fade out
-                    <br><br>
                 </p>
+            </div>
+            <div container="02teach-divs">
+                <div id="div1" class="div-first hover-bold">This is the first div.</div>
+                <div id="div2" class="div-later hover-bold">This is the second div.</div>
+                <div id="div3" class="div-later hover-bold">This is the third div.</div>
+
+                <button onclick="clickMe();">Click me!</button><br/>
+
+                <label for="txtColor">Color:</label> <input type="text" id="txtColor" placeholder="#cccccc"><br />
+
+                <button onclick="changeColor();">Change color</button>
             </div>
         </div>
     </main>
@@ -63,7 +79,6 @@
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
-    <script src="scripts/scripts.js"></script>
-</body>
+    </body>
 
 </html>
