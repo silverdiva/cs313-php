@@ -2,7 +2,7 @@
     $majors = array("CS"=>"Computer Science", "WDD"=>"Web Design and Development",
                     "CIT"=>"Computer Information Technology", "CE"=>"Computer Engineering");
 
-    echo "PHP File";
+    /*echo "PHP File";*/
 
 ?>
 

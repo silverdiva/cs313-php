@@ -26,7 +26,7 @@
                 <li><a href="02-teach.php">Week 2 TEACH Assignment</a></li>
                 <li><a href="index.php">Week 2 Prove Assignment</a></li>
                 <li><a href="03-teach.php">Week 3 TEACH Assignment</a></li>
-                <li><a href="">Week 3 Prove Assignment</a></li>
+                <li><a href="03-prove.php">Week 3 Prove Assignment</a></li>
                 <li><a href="">Week 4 TEACH Assignment</a></li>
                 <li><a href="">Week 4 Prove Assignment</a></li>
                 <li><a href="">Week 5 TEACH Assignment</a></li>
