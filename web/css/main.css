@@ -220,6 +220,10 @@ container {
 
 #assignment-landing h1 {
     margin: 0px;
+    font-size: 30px;
+    margin: 30px 5px 5px 15px;
+    font-family: 'Karma', serif;
+    font-weight: 800;
 }
 
 #assignment-landing ul {
@@ -231,11 +235,12 @@ container {
     text-decoration: underline;
     font-weight: 500; 
     color: #977360;
-    padding: %;
+    padding: 1%;
 }
 
 #assignment-landing li {
      padding: 2px;
+     list-style-type: none;
 }
 
 /*#assignment-landing li a:visited {
@@ -260,7 +265,11 @@ container {
 
 /*=======03 PROVE: Shopping Cart Assignment======*/
 
-/*index-shopping.php styling*/
+/*index-cart.php styling*/
+.products {
+    height: 800px;
+}
+
 #page-cart {
     padding: 8px;
     border-radius: 10px;
@@ -303,6 +312,12 @@ container {
     display: flex;
     flex-wrap: wrap;
 }
+
+/*products page*/
+#products {
+    margin-bottom: 60px;
+}
+
 .pdt {
     flex-grow: 1;
     width: 30%;
@@ -406,8 +421,28 @@ table.zebra input[type=number] {
     -moz-box-shadow: 0 1px 2px rgba(0,0,0,.2);
     box-shadow: 0 1px 2px rgba(0,0,0,.2);*/
 }
+
+.button-confirm {
+    display: inline-block;
+    outline: none;
+    cursor: pointer;
+    border: solid 1px #977360;
+    /*background: #478dad;*/
+    background: #bce8f1;
+    text-align: center;
+    text-decoration: none;
+    font: 14px/100% Arial, Helvetica, sans-serif;
+    padding: .5em 2em .55em;
+    /*text-shadow: 0 1px 1px rgba(0,0,0,.3);*/
+    -webkit-border-radius: .5em; 
+    -moz-border-radius: .5em;
+    border-radius: .3em;
+    margin: -90px 25px 120px 15px;
+}
+     
 .button:hover {
     background: #f47c20;
+    text-decoration: none;
     background: -webkit-gradient(linear, left top, left bottom, from(#f88e11), to(#f06015));
     background: -moz-linear-gradient(top,  #f88e11,  #f06015);
     filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#f88e11', endColorstr='#f06015');
@@ -415,29 +450,39 @@ table.zebra input[type=number] {
 .button:active {
     position: relative;
     top: 1px;
+    text-decoration: none;
+}
+
+.button-confirm:hover {
+    background: #f47c20;
+    text-decoration: none;
+    background: -webkit-gradient(linear, left top, left bottom, from(#f88e11), to(#f06015));
+    background: -moz-linear-gradient(top,  #f88e11,  #f06015);
+    filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#f88e11', endColorstr='#f06015');
+}
+.button-confirm:active {
+    position: relative;
+    top: 1px;
+    text-decoration: none;
 }
 
 /* checkout.php styling */
 .row {
-  display: -ms-flexbox; /* IE10 */
-  display: flex;
-  -ms-flex-wrap: wrap; /* IE10 */
-  flex-wrap: wrap;
   margin: 0 -16px;
 }
 
 .col-25 {
-  -ms-flex: 25%; /* IE10 */
+  -ms-flex: 25%; 
   flex: 25%;
 }
 
 .col-50 {
-  -ms-flex: 50%; /* IE10 */
+  -ms-flex: 50%; 
   flex: 50%;
 }
 
 .col-75 {
-  -ms-flex: 75%; /* IE10 */
+  -ms-flex: 75%; 
   flex: 75%;
 }
 
@@ -502,7 +547,6 @@ span.price {
   color: grey;
 }
 
-
 .btn:hover, .btn:focus {
     color: #333;
     text-decoration: none;
@@ -526,7 +570,47 @@ span.price {
    margin-bottom: 10px; 
 }
 
+/*thankyou.php styling*/
+.thankyou-wrapper {
+    padding: 10px;
+    margin-bottom: 30px;
+}
 
+
+.thankyou {
+    height: 300px;
+}
+
+.button-thankyou {
+    display: inline-block;
+    outline: none;
+    cursor: pointer;
+    border: solid 1px #977360;
+    /*background: #478dad;*/
+    background: #bce8f1;
+    text-align: center;
+    text-decoration: none;
+    font: 14px/100% Arial, Helvetica, sans-serif;
+    padding: .5em 2em .55em;
+    -webkit-border-radius: .5em; 
+    -moz-border-radius: .5em;
+    border-radius: .3em;
+    margin: -90px 25px 120px 15px;
+}
+    
+.button-thankyou:hover {
+    background: #f47c20;
+    text-decoration: none;
+    background: -webkit-gradient(linear, left top, left bottom, from(#f88e11), to(#f06015));
+    background: -moz-linear-gradient(top,  #f88e11,  #f06015);
+    filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#f88e11', endColorstr='#f06015');
+}
+
+.button-thankyou:active {
+    position: relative;
+    top: 1px;
+    text-decoration: none;
+}
 
 /* ====Responsive layout - when the screen is less than 800px wide, 
 make the two columns stack on top of each other instead of next to 
@@ -602,7 +686,9 @@ footer p {
 }
 
 
-
+.form-horizontal {
+    background-color: #f3ddb9;
+}
 
 /*FOR LARGE SCREEN DISPLAY*/
 /*Media Query - regular/desktop view applied when the screen is large*/

@@ -1,4 +1,5 @@
 <?php
+
 session_start();
 require __DIR__ . DIRECTORY_SEPARATOR . "lib" . DIRECTORY_SEPARATOR . "config.php";
 require PATH_LIB . "lib-db.php";
@@ -14,7 +15,11 @@ $products = $cartLib->pGet();
     <head>
         <?php include 'modules/head.php';?>
         <meta name="description" content="03 prove assignment: shopping cart page">
-        <title>03 Prove: Shopping Cart Module (Products Page)</title>
+        <title>03 Prove: Products Page</title>
+
+
+
+        <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <script src="scripts/scripts.js"></script>
         <script src="scripts/general.js"></script>
@@ -27,14 +32,6 @@ $products = $cartLib->pGet();
         <div id="noteOut">
             <div id="noteIn"></div>
         </div>
-
-        <!-- move "page-header" out of <header> element
-        so that it is displayed below my name -->
-
-        <!--
-           <header id="page-header">
-            Shopping Cart
-            -->
 
         <header>
             <div id="page-cart" onclick="cart.toggle();">

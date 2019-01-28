@@ -2,22 +2,22 @@
 <html lang="en">
 
 <head>
-   <?php include 'modules/head.php';?>
+    <?php include 'modules/head.php';?>
     <title>CS 313 | 02 Prove: Home Page </title>
 </head>
 
 
 <body>
-       <header>
+    <header>
         <div id="title">
             <h3>Kimberly Llanos</h3>
             <h1>CS 313:02 Week 02 Prove (Home Page)</h1>
         </div>
-        
+
         <nav>
             <?php include 'modules/nav.php';?>
         </nav>
-        
+
     </header>
 
     <main>
@@ -38,7 +38,7 @@
     </main>
 
     <footer>
-       <?php include 'modules/footer.php';?>
+        <?php include 'modules/footer.php';?>
     </footer>
 
     <!-- JavaScript using jQuery library -->
@@ -47,4 +47,5 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
     <script src="scripts/scripts.js"></script>
 </body>
+
 </html>
