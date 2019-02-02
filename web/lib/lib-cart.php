@@ -4,14 +4,14 @@ class Cart extends DB {
   function pGet () {
   // pGet () : get all products
 
-    $sql = "SELECT * FROM `products`";
+    $sql = "SELECT * FROM 'products'";
     return $this->fetch($sql, null, "product_id");
   }
 
   function pAdd ($name, $img, $desc, $price) {
   // pAdd () : add new product
 
-    $sql = "INSERT INTO `products` (`product_name`, `product_image`, `product_description`, `product_price`) VALUES (?, ?, ?, ?)";
+    $sql = "INSERT INTO 'products' ('product_name', 'product_image', 'product_description', 'product_price') VALUES (?, ?, ?, ?)";
     $cond = [$name, $img, $desc, $price];
     return $this->exec($sql, $cond);
   }
@@ -19,7 +19,7 @@ class Cart extends DB {
   function pEdit ($id, $name, $img, $desc, $price) {
   // pEdit () : update product
 
-    $sql = "UPDATE `products` SET `product_name`=?, `product_image`=?, `product_description`=?, `product_price`=? WHERE `product_id`=?";
+    $sql = "UPDATE 'products' SET 'product_name'=?, 'product_image'=?, 'product_description'=?, 'product_price'=? WHERE 'product_id'=?";
     $cond = [$name, $img, $desc, $price, $id];
     return $this->exec($sql, $cond);
   }
@@ -27,7 +27,7 @@ class Cart extends DB {
   function pDel ($id) {
   // pDel () : delete product
 
-    $sql = "DELETE FROM `products` WHERE `product_id`=?";
+    $sql = "DELETE FROM 'products' WHERE 'product_id'=?";
     $cond = [$id];
     return $this->exec($sql, $cond);
   }
@@ -41,13 +41,13 @@ class Cart extends DB {
     $this->start();
 
     // Create the order
-    $sql = "INSERT INTO `orders` (`order_name`, `order_email`) VALUES (?, ?)";
+    $sql = "INSERT INTO 'orders' ('order_name', 'order_email') VALUES (?, ?)";
     $cond = [$name, $email];
     $pass = $this->exec($sql, $cond);
 
     // Insert the items
     if ($pass) {
-      $sql = "INSERT INTO `orders_items` (`order_id`, `product_id`, `quantity`) VALUES ";
+      $sql = "INSERT INTO 'orders_items' ('order_id', 'product_id', 'quantity') VALUES ";
       $cond = [];
       foreach ($_SESSION['cart'] as $id=>$qty) {
         $sql .= "(?, ?, ?),";
@@ -65,10 +65,10 @@ class Cart extends DB {
   function oGet ($id) {
   // oGet () : get order
 
-    $sql = "SELECT * FROM `orders` WHERE `order_id`=?";
+    $sql = "SELECT * FROM 'orders' WHERE 'order_id'=?";
     $cond = [$id];
     $order = $this->fetch($sql, $cond);
-    $sql = "SELECT * FROM `orders_items` LEFT JOIN `products` USING (`product_id`) WHERE `orders_items`.order_id=?";
+    $sql = "SELECT * FROM 'orders_items' LEFT JOIN 'products' USING ('product_id') WHERE 'orders_items'.order_id=?";
     $order['items'] = $this->fetch($sql, $cond, "product_id");
     return $order;
   }
