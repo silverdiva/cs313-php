@@ -1,0 +1,330 @@
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset0 Calibri;}}
+{\colortbl ;\red0\green0\blue255;}
+{\*\generator Riched20 10.0.17763}\viewkind4\uc1 
+\pard\sa200\sl276\slmult1\f0\fs22\lang9\par
+kimta@Kimmie-ASUS-Q534UX MINGW64 ~/Documents/GitHub/cs313-php (master)\par
+$ git add *\par
+warning: LF will be replaced by CRLF in db/MySQL dbo sql/03-04Prove-CartMySQL.sql.\par
+The file will have its original line endings in your working directory\par
+warning: LF will be replaced by CRLF in db/Postgres dbo sql/03-04Prove-Cart-Postgres.sql.\par
+The file will have its original line endings in your working directory\par
+warning: LF will be replaced by CRLF in db/original shopping cart SQL_local_phpMyAdmin/cart.sql.\par
+The file will have its original line endings in your working directory\par
+\par
+kimta@Kimmie-ASUS-Q534UX MINGW64 ~/Documents/GitHub/cs313-php (master)\par
+$\par
+\par
+kimta@Kimmie-ASUS-Q534UX MINGW64 ~/Documents/GitHub/cs313-php (master)\par
+$ git commit -m "another push to github to include 'db' folder at root of project"\par
+[master 30d4a85] another push to github to include 'db' folder at root of project\par
+ 26 files changed, 492 insertions(+), 1192 deletions(-)\par
+ create mode 100644 db/MySQL dbo sql/03-04Cart-dummyMySQL.sql\par
+ rename web/SQL/cart.sql => db/MySQL dbo sql/03-04Prove-CartMySQL.sql (100%)\par
+ create mode 100644 db/Postgres dbo sql/03-04Prove-Cart-Postgres.sql\par
+ create mode 100644 db/Postgres dbo sql/03-04Prove-cart-dummy-Postgres.sql\par
+ rename web/SQL/w04-teach-postgres.sql => db/Postgres dbo sql/04TeachProve-Postgres.sql (100%)\par
+ rename web/SQL/teamWk5.sql => db/Postgres dbo sql/05Teach-Postgres.sql (87%)\par
+ create mode 100644 db/Postgres dbo sql/W04 CS313_CMD-Line Notes_Create Tbls_Insert Data.rtf\par
+ rename \{web/SQL => db/original shopping cart SQL_local_phpMyAdmin\}/cart-dummy.sql (100%)\par
+ create mode 100644 db/original shopping cart SQL_local_phpMyAdmin/cart.sql\par
+ delete mode 100644 web/03-prove-v2.php\par
+ delete mode 100644 web/SQL/w04-teach.sql\par
+ delete mode 100644 web/brackets versions/03-prove.php\par
+ delete mode 100644 web/brackets versions/1-confirmation.php\par
+ delete mode 100644 web/brackets versions/ajax-cart.php\par
+ delete mode 100644 web/brackets versions/assignments.php\par
+ delete mode 100644 web/brackets versions/checkout.css\par
+ delete mode 100644 web/brackets versions/checkout.php\par
+ delete mode 100644 web/brackets versions/index-cart.php\par
+ delete mode 100644 web/brackets versions/index.php\par
+ delete mode 100644 web/brackets versions/thankyou.php\par
+ delete mode 100644 web/netbeans versions/03-prove-v2.php\par
+ delete mode 100644 web/netbeans versions/03-prove.php\par
+ delete mode 100644 web/netbeans versions/ajax-cart.php\par
+ delete mode 100644 web/netbeans versions/checkout.css\par
+ delete mode 100644 web/netbeans versions/index-cart.php\par
+ delete mode 100644 web/netbeans versions/thankyou.php\par
+\par
+kimta@Kimmie-ASUS-Q534UX MINGW64 ~/Documents/GitHub/cs313-php (master)\par
+$ git push heroku\par
+Enumerating objects: 14, done.\par
+Counting objects: 100% (14/14), done.\par
+Delta compression using up to 4 threads\par
+Compressing objects: 100% (12/12), done.\par
+Writing objects: 100% (12/12), 6.54 KiB | 1.63 MiB/s, done.\par
+Total 12 (delta 2), reused 0 (delta 0)\par
+remote: Compressing source files... done.\par
+remote: Building source:\par
+remote:\par
+remote: -----> PHP app detected\par
+remote: -----> Bootstrapping...\par
+remote: -----> Installing platform packages...\par
+remote:        - php (7.3.1)\par
+remote:        - apache (2.4.37)\par
+remote:        - nginx (1.8.1)\par
+remote: -----> Installing dependencies...\par
+remote:        Composer version 1.8.0 2018-12-03 10:31:16\par
+remote:        Loading composer repositories with package information\par
+remote:        Installing dependencies from lock file\par
+remote:        Nothing to install or update\par
+remote:        Generating optimized autoload files\par
+remote: -----> Preparing runtime environment...\par
+remote: -----> Checking for additional extensions to install...\par
+remote: -----> Discovering process types\par
+remote:        Procfile declares types -> web\par
+remote:\par
+remote: -----> Compressing...\par
+remote:        Done: 17.6M\par
+remote: -----> Launching...\par
+remote:        Released v36\par
+remote:        {{\field{\*\fldinst{HYPERLINK https://stormy-sierra-49088.herokuapp.com/ }}{\fldrslt{https://stormy-sierra-49088.herokuapp.com/\ul0\cf0}}}}\f0\fs22  deployed to Heroku\par
+remote:\par
+remote: Verifying deploy... done.\par
+To {{\field{\*\fldinst{HYPERLINK https://git.heroku.com/stormy-sierra-49088.git }}{\fldrslt{https://git.heroku.com/stormy-sierra-49088.git\ul0\cf0}}}}\f0\fs22\par
+   9942c0d..30d4a85  master -> master\par
+\par
+kimta@Kimmie-ASUS-Q534UX MINGW64 ~/Documents/GitHub/cs313-php (master)\par
+$ git push github\par
+Enumerating objects: 14, done.\par
+Counting objects: 100% (14/14), done.\par
+Delta compression using up to 4 threads\par
+Compressing objects: 100% (12/12), done.\par
+Writing objects: 100% (12/12), 6.54 KiB | 2.18 MiB/s, done.\par
+Total 12 (delta 2), reused 0 (delta 0)\par
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.\par
+To {{\field{\*\fldinst{HYPERLINK https://github.com/silverdiva/cs313-php }}{\fldrslt{https://github.com/silverdiva/cs313-php\ul0\cf0}}}}\f0\fs22\par
+   9942c0d..30d4a85  master -> master\par
+\par
+kimta@Kimmie-ASUS-Q534UX MINGW64 ~/Documents/GitHub/cs313-php (master)\par
+$\par
+\par
+------------add w05 Teach data into tblScriptures\par
+\par
+kimta@Kimmie-ASUS-Q534UX MINGW64 ~/Documents/GitHub/cs313-php (master)\par
+$ git add *\par
+warning: LF will be replaced by CRLF in db/MySQL dbo sql/03-04Prove-CartMySQL.sql.\par
+The file will have its original line endings in your working directory\par
+warning: LF will be replaced by CRLF in db/Postgres dbo sql/03-04Prove-Cart-Postgres.sql.\par
+The file will have its original line endings in your working directory\par
+warning: LF will be replaced by CRLF in db/original shopping cart SQL_local_phpMyAdmin/cart.sql.\par
+The file will have its original line endings in your working directory\par
+\par
+kimta@Kimmie-ASUS-Q534UX MINGW64 ~/Documents/GitHub/cs313-php (master)\par
+$\par
+\par
+kimta@Kimmie-ASUS-Q534UX MINGW64 ~/Documents/GitHub/cs313-php (master)\par
+$ git commit -m "another push to github to include 'db' folder at root of project"\par
+[master 30d4a85] another push to github to include 'db' folder at root of project\par
+ 26 files changed, 492 insertions(+), 1192 deletions(-)\par
+ create mode 100644 db/MySQL dbo sql/03-04Cart-dummyMySQL.sql\par
+ rename web/SQL/cart.sql => db/MySQL dbo sql/03-04Prove-CartMySQL.sql (100%)\par
+ create mode 100644 db/Postgres dbo sql/03-04Prove-Cart-Postgres.sql\par
+ create mode 100644 db/Postgres dbo sql/03-04Prove-cart-dummy-Postgres.sql\par
+ rename web/SQL/w04-teach-postgres.sql => db/Postgres dbo sql/04TeachProve-Postgres.sql (100%)\par
+ rename web/SQL/teamWk5.sql => db/Postgres dbo sql/05Teach-Postgres.sql (87%)\par
+ create mode 100644 db/Postgres dbo sql/W04 CS313_CMD-Line Notes_Create Tbls_Insert Data.rtf\par
+ rename \{web/SQL => db/original shopping cart SQL_local_phpMyAdmin\}/cart-dummy.sql (100%)\par
+ create mode 100644 db/original shopping cart SQL_local_phpMyAdmin/cart.sql\par
+ delete mode 100644 web/03-prove-v2.php\par
+ delete mode 100644 web/SQL/w04-teach.sql\par
+ delete mode 100644 web/brackets versions/03-prove.php\par
+ delete mode 100644 web/brackets versions/1-confirmation.php\par
+ delete mode 100644 web/brackets versions/ajax-cart.php\par
+ delete mode 100644 web/brackets versions/assignments.php\par
+ delete mode 100644 web/brackets versions/checkout.css\par
+ delete mode 100644 web/brackets versions/checkout.php\par
+ delete mode 100644 web/brackets versions/index-cart.php\par
+ delete mode 100644 web/brackets versions/index.php\par
+ delete mode 100644 web/brackets versions/thankyou.php\par
+ delete mode 100644 web/netbeans versions/03-prove-v2.php\par
+ delete mode 100644 web/netbeans versions/03-prove.php\par
+ delete mode 100644 web/netbeans versions/ajax-cart.php\par
+ delete mode 100644 web/netbeans versions/checkout.css\par
+ delete mode 100644 web/netbeans versions/index-cart.php\par
+ delete mode 100644 web/netbeans versions/thankyou.php\par
+\par
+kimta@Kimmie-ASUS-Q534UX MINGW64 ~/Documents/GitHub/cs313-php (master)\par
+$ git push heroku\par
+Enumerating objects: 14, done.\par
+Counting objects: 100% (14/14), done.\par
+Delta compression using up to 4 threads\par
+Compressing objects: 100% (12/12), done.\par
+Writing objects: 100% (12/12), 6.54 KiB | 1.63 MiB/s, done.\par
+Total 12 (delta 2), reused 0 (delta 0)\par
+remote: Compressing source files... done.\par
+remote: Building source:\par
+remote:\par
+remote: -----> PHP app detected\par
+remote: -----> Bootstrapping...\par
+remote: -----> Installing platform packages...\par
+remote:        - php (7.3.1)\par
+remote:        - apache (2.4.37)\par
+remote:        - nginx (1.8.1)\par
+remote: -----> Installing dependencies...\par
+remote:        Composer version 1.8.0 2018-12-03 10:31:16\par
+remote:        Loading composer repositories with package information\par
+remote:        Installing dependencies from lock file\par
+remote:        Nothing to install or update\par
+remote:        Generating optimized autoload files\par
+remote: -----> Preparing runtime environment...\par
+remote: -----> Checking for additional extensions to install...\par
+remote: -----> Discovering process types\par
+remote:        Procfile declares types -> web\par
+remote:\par
+remote: -----> Compressing...\par
+remote:        Done: 17.6M\par
+remote: -----> Launching...\par
+remote:        Released v36\par
+remote:        {{\field{\*\fldinst{HYPERLINK https://stormy-sierra-49088.herokuapp.com/ }}{\fldrslt{https://stormy-sierra-49088.herokuapp.com/\ul0\cf0}}}}\f0\fs22  deployed to Heroku\par
+remote:\par
+remote: Verifying deploy... done.\par
+To {{\field{\*\fldinst{HYPERLINK https://git.heroku.com/stormy-sierra-49088.git }}{\fldrslt{https://git.heroku.com/stormy-sierra-49088.git\ul0\cf0}}}}\f0\fs22\par
+   9942c0d..30d4a85  master -> master\par
+\par
+kimta@Kimmie-ASUS-Q534UX MINGW64 ~/Documents/GitHub/cs313-php (master)\par
+$ git push github\par
+Enumerating objects: 14, done.\par
+Counting objects: 100% (14/14), done.\par
+Delta compression using up to 4 threads\par
+Compressing objects: 100% (12/12), done.\par
+Writing objects: 100% (12/12), 6.54 KiB | 2.18 MiB/s, done.\par
+Total 12 (delta 2), reused 0 (delta 0)\par
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.\par
+To {{\field{\*\fldinst{HYPERLINK https://github.com/silverdiva/cs313-php }}{\fldrslt{https://github.com/silverdiva/cs313-php\ul0\cf0}}}}\f0\fs22\par
+   9942c0d..30d4a85  master -> master\par
+\par
+kimta@Kimmie-ASUS-Q534UX MINGW64 ~/Documents/GitHub/cs313-php (master)\par
+$ heroku pg:psql\par
+--> Connecting to postgresql-silhouetted-18205\par
+psql (11.1, server 10.6 (Ubuntu 10.6-1.pgdg16.04+1))\par
+WARNING: Console code page (437) differs from Windows code page (1252)\par
+         8-bit characters might not work correctly. See psql reference\par
+         page "Notes for Windows users" for details.\par
+SSL connection (protocol: TLSv1.2, cipher: ECDHE-RSA-AES256-GCM-SHA384, bits: 256, compression: off)\par
+Type "help" for help.\par
+\par
+stormy-sierra-49088::DATABASE=> --create Scriptures table (W05 Teach:Team Assignment_1)--\par
+stormy-sierra-49088::DATABASE=> CREATE TABLE scriptures (\par
+stormy-sierra-49088::DATABASE(>     scriptures_id serial PRIMARY KEY,\par
+stormy-sierra-49088::DATABASE(>     scriptures_book VARCHAR(40),\par
+stormy-sierra-49088::DATABASE(>     scriptures_chapter INT,\par
+stormy-sierra-49088::DATABASE(>     scriptures_verse INT,\par
+stormy-sierra-49088::DATABASE(>     scriptures_content varchar(1000)\par
+stormy-sierra-49088::DATABASE(> );\par
+CREATE TABLE\par
+stormy-sierra-49088::DATABASE=>\par
+stormy-sierra-49088::DATABASE=> --Add Values to Scriptures Table (W05 Teach:Team Assignment_2)--\par
+stormy-sierra-49088::DATABASE=> INSERT INTO scriptures(scriptures_book, scriptures_chapter, scriptures_verse, scriptures_content)\par
+stormy-sierra-49088::DATABASE-> VALUES ('John', 1, 5, 'And the light shineth in darkness; and the darkness comprehended it not.'),\par
+stormy-sierra-49088::DATABASE->         ('Doctrine and Covenants', 88, 49, 'The light shineth in darkness, and the darkness comprehendeth it not; nevertheless, the day shall come when you shall comprehend even God, being quickened in him and by him.'),\par
+stormy-sierra-49088::DATABASE->         ('Doctrine and Covenants', 93, 28, 'He that keepeth his commandments receiveth truth and light, until he is glorified in truth and knoweth all things.'),\par
+stormy-sierra-49088::DATABASE->         ('Mosiah', 16, 9, 'He is the light and the life of the world; yea, a light that is endless, that can never be darkened; yea, and also a life which is endless, that there can be no more death.');\par
+INSERT 0 4\par
+stormy-sierra-49088::DATABASE=>\par
+\par
+kimta@Kimmie-ASUS-Q534UX MINGW64 ~/Documents/GitHub/cs313-php (master)\par
+$ git add *\par
+warning: LF will be replaced by CRLF in db/MySQL dbo sql/03-04Prove-CartMySQL.sql.\par
+The file will have its original line endings in your working directory\par
+warning: LF will be replaced by CRLF in db/Postgres dbo sql/03-04Prove-Cart-Postgres.sql.\par
+The file will have its original line endings in your working directory\par
+warning: LF will be replaced by CRLF in db/original shopping cart SQL_local_phpMyAdmin/cart.sql.\par
+The file will have its original line endings in your working directory\par
+\par
+kimta@Kimmie-ASUS-Q534UX MINGW64 ~/Documents/GitHub/cs313-php (master)\par
+$\par
+\par
+kimta@Kimmie-ASUS-Q534UX MINGW64 ~/Documents/GitHub/cs313-php (master)\par
+$ git commit -m "another push to github to include 'db' folder at root of project"\par
+[master 30d4a85] another push to github to include 'db' folder at root of project\par
+ 26 files changed, 492 insertions(+), 1192 deletions(-)\par
+ create mode 100644 db/MySQL dbo sql/03-04Cart-dummyMySQL.sql\par
+ rename web/SQL/cart.sql => db/MySQL dbo sql/03-04Prove-CartMySQL.sql (100%)\par
+ create mode 100644 db/Postgres dbo sql/03-04Prove-Cart-Postgres.sql\par
+ create mode 100644 db/Postgres dbo sql/03-04Prove-cart-dummy-Postgres.sql\par
+ rename web/SQL/w04-teach-postgres.sql => db/Postgres dbo sql/04TeachProve-Postgres.sql (100%)\par
+ rename web/SQL/teamWk5.sql => db/Postgres dbo sql/05Teach-Postgres.sql (87%)\par
+ create mode 100644 db/Postgres dbo sql/W04 CS313_CMD-Line Notes_Create Tbls_Insert Data.rtf\par
+ rename \{web/SQL => db/original shopping cart SQL_local_phpMyAdmin\}/cart-dummy.sql (100%)\par
+ create mode 100644 db/original shopping cart SQL_local_phpMyAdmin/cart.sql\par
+ delete mode 100644 web/03-prove-v2.php\par
+ delete mode 100644 web/SQL/w04-teach.sql\par
+ delete mode 100644 web/brackets versions/03-prove.php\par
+ delete mode 100644 web/brackets versions/1-confirmation.php\par
+ delete mode 100644 web/brackets versions/ajax-cart.php\par
+ delete mode 100644 web/brackets versions/assignments.php\par
+ delete mode 100644 web/brackets versions/checkout.css\par
+ delete mode 100644 web/brackets versions/checkout.php\par
+ delete mode 100644 web/brackets versions/index-cart.php\par
+ delete mode 100644 web/brackets versions/index.php\par
+ delete mode 100644 web/brackets versions/thankyou.php\par
+ delete mode 100644 web/netbeans versions/03-prove-v2.php\par
+ delete mode 100644 web/netbeans versions/03-prove.php\par
+ delete mode 100644 web/netbeans versions/ajax-cart.php\par
+ delete mode 100644 web/netbeans versions/checkout.css\par
+ delete mode 100644 web/netbeans versions/index-cart.php\par
+ delete mode 100644 web/netbeans versions/thankyou.php\par
+\par
+kimta@Kimmie-ASUS-Q534UX MINGW64 ~/Documents/GitHub/cs313-php (master)\par
+$ git push heroku\par
+Enumerating objects: 14, done.\par
+Counting objects: 100% (14/14), done.\par
+Delta compression using up to 4 threads\par
+Compressing objects: 100% (12/12), done.\par
+Writing objects: 100% (12/12), 6.54 KiB | 1.63 MiB/s, done.\par
+Total 12 (delta 2), reused 0 (delta 0)\par
+remote: Compressing source files... done.\par
+remote: Building source:\par
+remote:\par
+remote: -----> PHP app detected\par
+remote: -----> Bootstrapping...\par
+remote: -----> Installing platform packages...\par
+remote:        - php (7.3.1)\par
+remote:        - apache (2.4.37)\par
+remote:        - nginx (1.8.1)\par
+remote: -----> Installing dependencies...\par
+remote:        Composer version 1.8.0 2018-12-03 10:31:16\par
+remote:        Loading composer repositories with package information\par
+remote:        Installing dependencies from lock file\par
+remote:        Nothing to install or update\par
+remote:        Generating optimized autoload files\par
+remote: -----> Preparing runtime environment...\par
+remote: -----> Checking for additional extensions to install...\par
+remote: -----> Discovering process types\par
+remote:        Procfile declares types -> web\par
+remote:\par
+remote: -----> Compressing...\par
+remote:        Done: 17.6M\par
+remote: -----> Launching...\par
+remote:        Released v36\par
+remote:        {{\field{\*\fldinst{HYPERLINK https://stormy-sierra-49088.herokuapp.com/ }}{\fldrslt{https://stormy-sierra-49088.herokuapp.com/\ul0\cf0}}}}\f0\fs22  deployed to Heroku\par
+remote:\par
+remote: Verifying deploy... done.\par
+To {{\field{\*\fldinst{HYPERLINK https://git.heroku.com/stormy-sierra-49088.git }}{\fldrslt{https://git.heroku.com/stormy-sierra-49088.git\ul0\cf0}}}}\f0\fs22\par
+   9942c0d..30d4a85  master -> master\par
+\par
+kimta@Kimmie-ASUS-Q534UX MINGW64 ~/Documents/GitHub/cs313-php (master)\par
+$ git push github\par
+Enumerating objects: 14, done.\par
+Counting objects: 100% (14/14), done.\par
+Delta compression using up to 4 threads\par
+Compressing objects: 100% (12/12), done.\par
+Writing objects: 100% (12/12), 6.54 KiB | 2.18 MiB/s, done.\par
+Total 12 (delta 2), reused 0 (delta 0)\par
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.\par
+To {{\field{\*\fldinst{HYPERLINK https://github.com/silverdiva/cs313-php }}{\fldrslt{https://github.com/silverdiva/cs313-php\ul0\cf0}}}}\f0\fs22\par
+   9942c0d..30d4a85  master -> master\par
+\par
+kimta@Kimmie-ASUS-Q534UX MINGW64 ~/Documents/GitHub/cs313-php (master)\par
+$ heroku pg:psql\par
+--> Connecting to postgresql-silhouetted-18205\par
+psql (11.1, server 10.6 (Ubuntu 10.6-1.pgdg16.04+1))\par
+WARNING: Console code page (437) differs from Windows code page (1252)\par
+         8-bit characters might not work correctly. See psql reference\par
+         page "Notes for Windows users" for details.\par
+SSL connection (protocol: TLSv1.2, cipher: ECDHE-RSA-AES256-GCM-SHA384, bits: 256, compression: off)\par
+Type "help" for help.\par
+\par
+\par
+}
+ 

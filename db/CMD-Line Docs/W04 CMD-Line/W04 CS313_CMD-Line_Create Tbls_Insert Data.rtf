@@ -1,0 +1,379 @@
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset0 Calibri;}{\f1\fnil\fcharset1 Segoe UI Symbol;}}
+{\colortbl ;\red0\green0\blue255;}
+{\*\generator Riched20 10.0.17763}\viewkind4\uc1 
+\pard\sa200\sl276\slmult1\f0\fs22\lang9\par
+kimta@Kimmie-ASUS-Q534UX MINGW64 ~/Documents/GitHub/cs313-php (master)\par
+$ heroku pg:psql\par
+--> Connecting to postgresql-silhouetted-18205\par
+psql (11.1, server 10.6 (Ubuntu 10.6-1.pgdg16.04+1))\par
+WARNING: Console code page (437) differs from Windows code page (1252)\par
+         8-bit characters might not work correctly. See psql reference\par
+         page "Notes for Windows users" for details.\par
+SSL connection (protocol: TLSv1.2, cipher: ECDHE-RSA-AES256-GCM-SHA384, bits: 256, compression: off)\par
+Type "help" for help.\par
+\par
+stormy-sierra-49088::DATABASE=> \\q\par
+\par
+kimta@Kimmie-ASUS-Q534UX MINGW64 ~/Documents/GitHub/cs313-php (master)\par
+$ dir\par
+app.json  composer.json  composer.lock  db  nbproject  Procfile  README.md  web\par
+\par
+kimta@Kimmie-ASUS-Q534UX MINGW64 ~/Documents/GitHub/cs313-php (master)\par
+$ cd web\par
+\par
+kimta@Kimmie-ASUS-Q534UX MINGW64 ~/Documents/GitHub/cs313-php/web (master)\par
+$ heroku pg:psql\par
+--> Connecting to postgresql-silhouetted-18205\par
+psql (11.1, server 10.6 (Ubuntu 10.6-1.pgdg16.04+1))\par
+WARNING: Console code page (437) differs from Windows code page (1252)\par
+         8-bit characters might not work correctly. See psql reference\par
+         page "Notes for Windows users" for details.\par
+SSL connection (protocol: TLSv1.2, cipher: ECDHE-RSA-AES256-GCM-SHA384, bits: 256, compression: off)\par
+Type "help" for help.\par
+\par
+stormy-sierra-49088::DATABASE=> CREATE TABLE  orders  (\par
+stormy-sierra-49088::DATABASE(>    order_id  serial PRIMARY KEY,\par
+stormy-sierra-49088::DATABASE(>    order_date  datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,\par
+stormy-sierra-49088::DATABASE(>    order_name  varchar(255) NOT NULL,\par
+stormy-sierra-49088::DATABASE(>    order_email  varchar(255) NOT NULL\par
+stormy-sierra-49088::DATABASE(> )\par
+stormy-sierra-49088::DATABASE->\par
+stormy-sierra-49088::DATABASE-> CREATE TABLE  orders_items  (\par
+stormy-sierra-49088::DATABASE(>    order_id  serial PRIMARY KEY REFERENCES orders(order_id),\par
+stormy-sierra-49088::DATABASE(>    product_id  int NOT NULL REFERENCES products(product_id),\par
+stormy-sierra-49088::DATABASE(>    quantity  int NOT NULL\par
+stormy-sierra-49088::DATABASE(> )\par
+stormy-sierra-49088::DATABASE->\par
+stormy-sierra-49088::DATABASE-> CREATE TABLE  products  (\par
+stormy-sierra-49088::DATABASE(>    product_id  serial   PRIMARY KEY,\par
+stormy-sierra-49088::DATABASE(>    product_name  varchar(255) NOT NULL,\par
+stormy-sierra-49088::DATABASE(>    product_image  varchar(255) DEFAULT NULL,\par
+stormy-sierra-49088::DATABASE(>    product_description  text,\par
+stormy-sierra-49088::DATABASE(>    product_price  decimal(10,2) NOT NULL DEFAULT  0.00\par
+stormy-sierra-49088::DATABASE(> )\par
+stormy-sierra-49088::DATABASE->\par
+stormy-sierra-49088::DATABASE-> CREATE TABLE  orders  (\par
+stormy-sierra-49088::DATABASE(>    order_id  serial PRIMARY KEY,\par
+stormy-sierra-49088::DATABASE(>    order_date  datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,\par
+stormy-sierra-49088::DATABASE(>    order_name  varchar(255) NOT NULL,\par
+stormy-sierra-49088::DATABASE(>    order_email  varchar(255) NOT NULL\par
+stormy-sierra-49088::DATABASE(> );\par
+ERROR:  syntax error at or near "CREATE"\par
+LINE 7: CREATE TABLE  orders_items  (\par
+        ^\par
+stormy-sierra-49088::DATABASE=>\par
+stormy-sierra-49088::DATABASE=> CREATE TABLE  orders_items  (\par
+stormy-sierra-49088::DATABASE(>    order_id  serial PRIMARY KEY REFERENCES orders(order_id),\par
+stormy-sierra-49088::DATABASE(>    product_id  int NOT NULL REFERENCES products(product_id),\par
+stormy-sierra-49088::DATABASE(>    quantity  int NOT NULL\par
+stormy-sierra-49088::DATABASE(> );\par
+ERROR:  relation "orders" does not exist\par
+stormy-sierra-49088::DATABASE=>\par
+stormy-sierra-49088::DATABASE=> CREATE TABLE  products  (\par
+stormy-sierra-49088::DATABASE(>    product_id  serial   PRIMARY KEY,\par
+stormy-sierra-49088::DATABASE(>    product_name  varchar(255) NOT NULL,\par
+stormy-sierra-49088::DATABASE(>    product_image  varchar(255) DEFAULT NULL,\par
+stormy-sierra-49088::DATABASE(>    product_description  text,\par
+stormy-sierra-49088::DATABASE(>    product_price  decimal(10,2) NOT NULL DEFAULT  0.00\par
+stormy-sierra-49088::DATABASE(> );\par
+CREATE TABLE\par
+stormy-sierra-49088::DATABASE=> CREATE TABLE  orders  (\par
+stormy-sierra-49088::DATABASE(>    order_id  serial PRIMARY KEY,\par
+stormy-sierra-49088::DATABASE(>    order_date  datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,\par
+stormy-sierra-49088::DATABASE(>    order_name  varchar(255) NOT NULL,\par
+stormy-sierra-49088::DATABASE(>    order_email  varchar(255) NOT NULL\par
+stormy-sierra-49088::DATABASE(> );\par
+ERROR:  type "datetime" does not exist\par
+LINE 3:    order_date  datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,\par
+                       ^\par
+stormy-sierra-49088::DATABASE=>\par
+stormy-sierra-49088::DATABASE=> CREATE TABLE  orders_items  (\par
+stormy-sierra-49088::DATABASE(>    order_id  serial PRIMARY KEY REFERENCES orders(order_id),\par
+stormy-sierra-49088::DATABASE(>    product_id  int NOT NULL REFERENCES products(product_id),\par
+stormy-sierra-49088::DATABASE(>    quantity  int NOT NULL\par
+stormy-sierra-49088::DATABASE(> );\par
+ERROR:  relation "orders" does not exist\par
+stormy-sierra-49088::DATABASE=> CREATE TABLE  orders  (\par
+stormy-sierra-49088::DATABASE(>    order_id  serial PRIMARY KEY,\par
+stormy-sierra-49088::DATABASE(>    order_date  date NOT NULL DEFAULT CURRENT_TIMESTAMP,\par
+stormy-sierra-49088::DATABASE(>    order_name  varchar(255) NOT NULL,\par
+stormy-sierra-49088::DATABASE(>    order_email  varchar(255) NOT NULL\par
+stormy-sierra-49088::DATABASE(> );\par
+CREATE TABLE\par
+stormy-sierra-49088::DATABASE=>\par
+stormy-sierra-49088::DATABASE=> CREATE TABLE  orders_items  (\par
+stormy-sierra-49088::DATABASE(>    order_id  serial PRIMARY KEY REFERENCES orders(order_id),\par
+stormy-sierra-49088::DATABASE(>    product_id  int NOT NULL REFERENCES products(product_id),\par
+stormy-sierra-49088::DATABASE(>    quantity  int NOT NULL\par
+stormy-sierra-49088::DATABASE(> );\par
+CREATE TABLE\par
+stormy-sierra-49088::DATABASE=> INSERT INTO  products  ( product_id ,  product_name ,  product_image ,  product_description ,  product_price ) VALUES\par
+stormy-sierra-49088::DATABASE-> (1,  Car ,  car.jpg ,  "It\\ s a car. Batteries not included, not required. Powered by hand." ,  6.00 ),\par
+stormy-sierra-49088::DATABASE-> (2,  Dangerous Bear ,  dangerous-bear.jpg ,  "Beware. This bear is extremely dangerous." ,  8.00 ),\par
+stormy-sierra-49088::DATABASE-> (3,  Fish ,  fish.jpg ,  "There is something fishy going on here... ,"  7.50 ),\par
+stormy-sierra-49088::DATABASE-> (4,  Chill Gorilla ,  gorilla.jpg ,  "Unlike the dangerous bear, this one is chill." ,  8.80 ),\par
+stormy-sierra-49088::DATABASE-> (5,  Rubber Duck ,  rubber-duck.jpg ,  "Best partner in the bath tub." ,  9.75 ),\par
+stormy-sierra-49088::DATABASE-> (6,  Rubiks Cube ,  rubiks-cube.jpg ,  "Some say that this cube trains your intelligence. Some others claim that it\\ s just frustration." ,  9.30 );\par
+NOTICE:  identifier "It\\ s a car. Batteries not included, not required. Powered by hand." will be truncated to "It\\ s a car. Batteries not included, not required. Powered by h"\par
+ERROR:  syntax error at or near "Bear"\par
+LINE 3: (2,  Dangerous Bear ,  dangerous-bear.jpg ,  "Beware. This b...\par
+                       ^\par
+stormy-sierra-49088::DATABASE=> INSERT INTO  products  ( product_id ,  product_name ,  product_image ,  product_description ,  product_price ) VALUES\par
+stormy-sierra-49088::DATABASE-> (1,  "Car" ,  car.jpg ,  "It's a car. Batteries not included, not required. Powered by hand." ,  6.00 ),\par
+stormy-sierra-49088::DATABASE-> (2,  "Dangerous Bear" ,  dangerous-bear.jpg ,  "Beware. This bear is extremely dangerous." ,  8.00 ),\par
+stormy-sierra-49088::DATABASE-> (3,  "Fish" ,  fish.jpg ,  "There is something fishy going on here... ,"  7.50 ),\par
+stormy-sierra-49088::DATABASE-> (4,  "Chill Gorilla" ,  gorilla.jpg ,  "Unlike the dangerous bear, this one is chill." ,  8.80 ),\par
+stormy-sierra-49088::DATABASE-> (5,  "Rubber Duck" ,  rubber-duck.jpg ,  "Best partner in the bath tub." ,  9.75 ),\par
+stormy-sierra-49088::DATABASE-> (6,  "Rubiks Cube" ,  rubiks-cube.jpg ,  "Some say that this cube trains your intelligence. Some others claim that it\\ s just frustration." ,  9.30 );\par
+NOTICE:  identifier "It's a car. Batteries not included, not required. Powered by hand." will be truncated to "It's a car. Batteries not included, not required. Powered by ha"\par
+ERROR:  syntax error at or near "7.50"\par
+LINE 4: ...pg ,  "There is something fishy going on here... ,"  7.50 ),\par
+                                                                ^\par
+stormy-sierra-49088::DATABASE=> INSERT INTO  products  ( product_id ,  product_name ,  product_image ,  product_description ,  product_price ) VALUES\par
+stormy-sierra-49088::DATABASE-> (1,  "Car" ,  car.jpg ,  "It's a car. Batteries not included, not required. Powered by hand." ,  6.00 ),\par
+stormy-sierra-49088::DATABASE-> (2,  "Dangerous Bear" ,  dangerous-bear.jpg ,  "Beware. This bear is extremely dangerous." ,  8.00 ),\par
+stormy-sierra-49088::DATABASE-> (3,  "Fish" ,  fish.jpg ,  "There is something fishy going on here... ",  7.50 ),\par
+stormy-sierra-49088::DATABASE-> (4,  "Chill Gorilla" ,  gorilla.jpg ,  "Unlike the dangerous bear, this one is chill." ,  8.80 ),\par
+stormy-sierra-49088::DATABASE-> (5,  "Rubber Duck" ,  rubber-duck.jpg ,  "Best partner in the bath tub." ,  9.75 ),\par
+stormy-sierra-49088::DATABASE-> (6,  "Rubiks Cube" ,  rubiks-cube.jpg ,  "Some say that this cube trains your intelligence. Some others claim that it\\ s just frustration." ,  9.30 );\par
+NOTICE:  identifier "It's a car. Batteries not included, not required. Powered by hand." will be truncated to "It's a car. Batteries not included, not required. Powered by ha"\par
+NOTICE:  identifier "Some say that this cube trains your intelligence. Some others claim that it\\ s just frustration." will be truncated to "Some say that this cube trains your intelligence. Some others c"\par
+ERROR:  column "Car" does not exist\par
+LINE 2: (1,  "Car" ,  car.jpg ,  "It's a car. Batteries not included...\par
+             ^\par
+stormy-sierra-49088::DATABASE=> INSERT INTO  products  (product_name ,  product_image ,  product_description ,  product_price ) VALUES\par
+stormy-sierra-49088::DATABASE-> ("Car" ,  car.jpg ,  "It's a car. Batteries not included, not required. Powered by hand." ,  6.00 ),\par
+stormy-sierra-49088::DATABASE-> ("Dangerous Bear" ,  dangerous-bear.jpg ,  "Beware. This bear is extremely dangerous." ,  8.00 ),\par
+stormy-sierra-49088::DATABASE-> ("Fish" ,  fish.jpg ,  "There is something fishy going on here... ",  7.50 ),\par
+stormy-sierra-49088::DATABASE-> ("Chill Gorilla" ,  gorilla.jpg ,  "Unlike the dangerous bear, this one is chill." ,  8.80 ),\par
+stormy-sierra-49088::DATABASE-> ("Rubber Duck" ,  rubber-duck.jpg ,  "Best partner in the bath tub." ,  9.75 ),\par
+stormy-sierra-49088::DATABASE-> ("Rubiks Cube" ,  rubiks-cube.jpg ,  "Some say that this cube trains your intelligence. Some others claim that it\\ s just frustration." ,  9.30 );\par
+NOTICE:  identifier "It's a car. Batteries not included, not required. Powered by hand." will be truncated to "It's a car. Batteries not included, not required. Powered by ha"\par
+NOTICE:  identifier "Some say that this cube trains your intelligence. Some others claim that it\\ s just frustration." will be truncated to "Some say that this cube trains your intelligence. Some others c"\par
+ERROR:  column "Car" does not exist\par
+LINE 2: ("Car" ,  car.jpg ,  "It's a car. Batteries not included, no...\par
+         ^\par
+stormy-sierra-49088::DATABASE=>\par
+stormy-sierra-49088::DATABASE=> INSERT INTO  products  (product_name ,  product_image ,  product_description ,  product_price ) VALUES\par
+stormy-sierra-49088::DATABASE-> ('Car' ,  car.jpg ,  'It\\'s a car. Batteries not included, not required. Powered by hand.' ,  6.00 ),\par
+stormy-sierra-49088::DATABASE'> ('Dangerous Bear' ,  dangerous-bear.jpg ,  'Beware. This bear is extremely dangerous.' ,  8.00 ),\par
+stormy-sierra-49088::DATABASE'> ('Fish' ,  fish.jpg ,  'There is something fishy going on here... ',  7.50 ),\par
+stormy-sierra-49088::DATABASE'> ('Chill Gorilla' ,  gorilla.jpg ,  'Unlike the dangerous bear, this one is chill.' ,  8.80 ),\par
+stormy-sierra-49088::DATABASE'> ('Rubber Duck' ,  rubber-duck.jpg ,  'Best partner in the bath tub.' ,  9.75 ),\par
+stormy-sierra-49088::DATABASE'> ('Rubiks Cube' ,  rubiks-cube.jpg ,  'Some say that this cube trains your intelligence. Some others claim that it\\ s just frustration.' ,  9.30 );\par
+Invalid command \\. Try \\? for help.\par
+stormy-sierra-49088::DATABASE(> \\?\par
+General\par
+  \\copyright             show PostgreSQL usage and distribution terms\par
+  \\crosstabview [COLUMNS] execute query and display results in crosstab\par
+  \\errverbose            show most recent error message at maximum verbosity\par
+  \\g [FILE] or ;         execute query (and send results to file or |pipe)\par
+  \\gdesc                 describe result of query, without executing it\par
+  \\gexec                 execute query, then execute each value in its result\par
+  \\gset [PREFIX]         execute query and store results in psql variables\par
+  \\gx [FILE]             as \\g, but forces expanded output mode\par
+  \\q                     quit psql\par
+  \\watch [SEC]           execute query every SEC seconds\par
+\par
+Help\par
+  \\? [commands]          show help on backslash commands\par
+  \\? options             show help on psql command-line options\par
+  \\? variables           show help on special variables\par
+  \\h [NAME]              help on syntax of SQL commands, * for all commands\par
+\par
+Query Buffer\par
+  \\e [FILE] [LINE]       edit the query buffer (or file) with external editor\par
+  \\ef [FUNCNAME [LINE]]  edit function definition with external editor\par
+  \\ev [VIEWNAME [LINE]]  edit view definition with external editor\par
+  \\p                     show the contents of the query buffer\par
+  \\r                     reset (clear) the query buffer\par
+  \\w FILE                write query buffer to file\par
+\par
+Input/Output\par
+  \\copy ...              perform SQL COPY with data stream to the client host\par
+  \\echo [STRING]         write string to standard output\par
+  \\i FILE                execute commands from file\par
+  \\ir FILE               as \\i, but relative to location of current script\par
+  \\o [FILE]              send all query results to file or |pipe\par
+stormy-sierra-49088::DATABASE(> INSERT INTO  products  (product_name ,  product_image ,  product_description ,  product_price ) VALUES\par
+stormy-sierra-49088::DATABASE(> ('Car' ,  car.jpg ,  'It''s a car. Batteries not included, not required. Powered by hand.' ,  6.00 ),\par
+stormy-sierra-49088::DATABASE(> ('Dangerous Bear' ,  dangerous-bear.jpg ,  'Beware. This bear is extremely dangerous.' ,  8.00 ),\par
+stormy-sierra-49088::DATABASE(> ('Fish' ,  fish.jpg ,  'There is something fishy going on here... ',  7.50 ),\par
+stormy-sierra-49088::DATABASE(> ('Chill Gorilla' ,  gorilla.jpg ,  'Unlike the dangerous bear, this one is chill.' ,  8.80 ),\par
+stormy-sierra-49088::DATABASE(> ('Rubber Duck' ,  rubber-duck.jpg ,  'Best partner in the bath tub.' ,  9.75 ),\par
+stormy-sierra-49088::DATABASE(> ('Rubiks Cube' ,  rubiks-cube.jpg ,  'Some say that this cube trains your intelligence. Some others claim that it''s just frustration.' ,  9.30 );\par
+stormy-sierra-49088::DATABASE(>\par
+stormy-sierra-49088::DATABASE(>\par
+stormy-sierra-49088::DATABASE(> \\q\par
+\par
+kimta@Kimmie-ASUS-Q534UX MINGW64 ~/Documents/GitHub/cs313-php/web (master)\par
+$ heroku p:psql\par
+ \'bb   Warning: p:psql is not a heroku command.\par
+Did you mean pg:psql? [y/n]:\par
+ \'bb   Error: Run heroku help for a list of available commands.\par
+\par
+kimta@Kimmie-ASUS-Q534UX MINGW64 ~/Documents/GitHub/cs313-php/web (master)\par
+$ heroku pg:psql\par
+--> Connecting to postgresql-silhouetted-18205\par
+psql (11.1, server 10.6 (Ubuntu 10.6-1.pgdg16.04+1))\par
+WARNING: Console code page (437) differs from Windows code page (1252)\par
+         8-bit characters might not work correctly. See psql reference\par
+         page "Notes for Windows users" for details.\par
+SSL connection (protocol: TLSv1.2, cipher: ECDHE-RSA-AES256-GCM-SHA384, bits: 256, compression: off)\par
+Type "help" for help.\par
+\par
+stormy-sierra-49088::DATABASE=> INSERT INTO  products  (product_name ,  product_image ,  product_description ,  product_price ) VALUES\par
+stormy-sierra-49088::DATABASE-> ('Car' ,  car.jpg ,  'It''s a car. Batteries not included, not required. Powered by hand.' ,  6.00 ),\par
+stormy-sierra-49088::DATABASE-> ('Dangerous Bear' ,  dangerous-bear.jpg ,  'Beware. This bear is extremely dangerous.' ,  8.00 ),\par
+stormy-sierra-49088::DATABASE-> ('Fish' ,  fish.jpg ,  'There is something fishy going on here... ',  7.50 ),\par
+stormy-sierra-49088::DATABASE-> ('Chill Gorilla' ,  gorilla.jpg ,  'Unlike the dangerous bear, this one is chill.' ,  8.80 ),\par
+stormy-sierra-49088::DATABASE-> ('Rubber Duck' ,  rubber-duck.jpg ,  'Best partner in the bath tub.' ,  9.75 ),\par
+stormy-sierra-49088::DATABASE-> ('Rubiks Cube' ,  rubiks-cube.jpg ,  'Some say that this cube trains your intelligence. Some others claim that it''s just frustration.' ,  9.30 );\par
+ERROR:  missing FROM-clause entry for table "car"\par
+LINE 2: ('Car' ,  car.jpg ,  'It''s a car. Batteries not included, n...\par
+                  ^\par
+stormy-sierra-49088::DATABASE=>\par
+stormy-sierra-49088::DATABASE=>\par
+stormy-sierra-49088::DATABASE=> INSERT INTO  products  (product_name ,  product_image ,  product_description ,  product_price ) VALUES\par
+stormy-sierra-49088::DATABASE-> ('Car' ,  'car.jpg' ,  'It''s a car. Batteries not included, not required. Powered by hand.' ,  6.00 ),\par
+stormy-sierra-49088::DATABASE-> ('Dangerous Bear' ,  'dangerous-bear.jpg' ,  'Beware. This bear is extremely dangerous.' ,  8.00 ),\par
+stormy-sierra-49088::DATABASE-> ('Fish' ,  'fish.jpg' ,  'There is something fishy going on here... ',  7.50 ),\par
+stormy-sierra-49088::DATABASE-> ('Chill Gorilla' ,  'gorilla.jpg' ,  'Unlike the dangerous bear, this one is chill.' ,  8.80 ),\par
+stormy-sierra-49088::DATABASE-> ('Rubber Duck' ,  'rubber-duck.jpg' ,  'Best partner in the bath tub.' ,  9.75 ),\par
+stormy-sierra-49088::DATABASE-> ('Rubiks Cube' ,  'rubiks-cube.jpg' ,  'Some say that this cube trains your intelligence. Some others claim that it''s just frustration.' ,  9.30 );\par
+INSERT 0 6\par
+stormy-sierra-49088::DATABASE=> heroku commit -m "new configs on db files, added shopping cart tbls and data"\par
+stormy-sierra-49088::DATABASE-> \\q\par
+\par
+kimta@Kimmie-ASUS-Q534UX MINGW64 ~/Documents/GitHub/cs313-php/web (master)\par
+$ heroku commit -m "new configs on db files, added shopping cart tbls and data"\par
+'C:\\Program' is not recognized as an internal or external command,\par
+operable program or batch file.\par
+\par
+kimta@Kimmie-ASUS-Q534UX MINGW64 ~/Documents/GitHub/cs313-php/web (master)\par
+$ heroku add *\par
+ \'bb   Warning: add is not a heroku command.\par
+Did you mean ci? [y/n]:\par
+ \'bb   Error: Run heroku help for a list of available commands.\par
+\par
+kimta@Kimmie-ASUS-Q534UX MINGW64 ~/Documents/GitHub/cs313-php/web (master)\par
+$\par
+\par
+kimta@Kimmie-ASUS-Q534UX MINGW64 ~/Documents/GitHub/cs313-php/web (master)\par
+$ heroku add*\par
+ \'bb   Warning: add* is not a heroku command.\par
+Did you mean addons? [y/n]:\par
+Did you mean addons? [y/n]:\par
+Did you mean addons? [y/n]: y\par
+\par
+Add-on                                            Plan       Price  State\par
+\f1\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\f0   \f1\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\f0   \f1\u9472?\u9472?\u9472?\u9472?\u9472?\f0   \f1\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\f0\par
+heroku-postgresql (postgresql-regular-83583)      hobby-dev  free   created\par
+ \f1\u9492?\u9472?\f0  as HEROKU_POSTGRESQL_BLUE\par
+\par
+heroku-postgresql (postgresql-silhouetted-18205)  hobby-dev  free   created\par
+ \f1\u9492?\u9472?\f0  as DATABASE\par
+\par
+The table above shows add-ons and the attachments to the current app (stormy-sierra-49088) or other apps.\par
+\par
+\par
+kimta@Kimmie-ASUS-Q534UX MINGW64 ~/Documents/GitHub/cs313-php/web (master)\par
+$\par
+\par
+kimta@Kimmie-ASUS-Q534UX MINGW64 ~/Documents/GitHub/cs313-php/web (master)\par
+$ git add *\par
+warning: LF will be replaced by CRLF in web/SQL/cart.sql.\par
+The file will have its original line endings in your working directory\par
+\par
+kimta@Kimmie-ASUS-Q534UX MINGW64 ~/Documents/GitHub/cs313-php/web (master)\par
+$\par
+\par
+kimta@Kimmie-ASUS-Q534UX MINGW64 ~/Documents/GitHub/cs313-php/web (master)\par
+$ heroku git commit -m "new configs on db files, added shopping cart tbls and data"\par
+'C:\\Program' is not recognized as an internal or external command,\par
+operable program or batch file.\par
+\par
+kimta@Kimmie-ASUS-Q534UX MINGW64 ~/Documents/GitHub/cs313-php/web (master)\par
+$ git commit -m "new configs on db files, added shopping cart tbls and data"\par
+[master e432190] new configs on db files, added shopping cart tbls and data\par
+ 7 files changed, 114 insertions(+), 49 deletions(-)\par
+ rewrite web/SQL/cart.sql (89%)\par
+ create mode 100644 web/SQL/teamWk5.sql\par
+ create mode 100644 web/SQL/w04-teach-postgres.sql\par
+ create mode 100644 web/SQL/w04-teach.sql\par
+\par
+kimta@Kimmie-ASUS-Q534UX MINGW64 ~/Documents/GitHub/cs313-php/web (master)\par
+$ git push heroku\par
+Enumerating objects: 19, done.\par
+Counting objects: 100% (19/19), done.\par
+Delta compression using up to 4 threads\par
+Compressing objects: 100% (11/11), done.\par
+Writing objects: 100% (11/11), 2.22 KiB | 455.00 KiB/s, done.\par
+Total 11 (delta 5), reused 0 (delta 0)\par
+remote: Compressing source files... done.\par
+remote: Building source:\par
+remote:\par
+remote: -----> PHP app detected\par
+remote: -----> Bootstrapping...\par
+remote: -----> Installing platform packages...\par
+remote:        - php (7.3.1)\par
+remote:        - apache (2.4.37)\par
+remote:        - nginx (1.8.1)\par
+remote: -----> Installing dependencies...\par
+remote:        Composer version 1.8.0 2018-12-03 10:31:16\par
+remote:        Loading composer repositories with package information\par
+remote:        Installing dependencies from lock file\par
+remote:        Nothing to install or update\par
+remote:        Generating optimized autoload files\par
+remote: -----> Preparing runtime environment...\par
+remote: -----> Checking for additional extensions to install...\par
+remote: -----> Discovering process types\par
+remote:        Procfile declares types -> web\par
+remote:\par
+remote: -----> Compressing...\par
+remote:        Done: 17.4M\par
+remote: -----> Launching...\par
+remote:        Released v33\par
+remote:        {{\field{\*\fldinst{HYPERLINK https://stormy-sierra-49088.herokuapp.com/ }}{\fldrslt{https://stormy-sierra-49088.herokuapp.com/\ul0\cf0}}}}\f0\fs22  deployed to Heroku\par
+remote:\par
+remote: Verifying deploy... done.\par
+To {{\field{\*\fldinst{HYPERLINK https://git.heroku.com/stormy-sierra-49088.git }}{\fldrslt{https://git.heroku.com/stormy-sierra-49088.git\ul0\cf0}}}}\f0\fs22\par
+   36b4bba..e432190  master -> master\par
+\par
+kimta@Kimmie-ASUS-Q534UX MINGW64 ~/Documents/GitHub/cs313-php/web (master)\par
+$ git push github\par
+Enumerating objects: 19, done.\par
+Counting objects: 100% (19/19), done.\par
+Delta compression using up to 4 threads\par
+Compressing objects: 100% (11/11), done.\par
+Writing objects: 100% (11/11), 2.22 KiB | 325.00 KiB/s, done.\par
+Total 11 (delta 5), reused 0 (delta 0)\par
+remote: Resolving deltas: 100% (5/5), completed with 5 local objects.\par
+To {{\field{\*\fldinst{HYPERLINK https://github.com/silverdiva/cs313-php }}{\fldrslt{https://github.com/silverdiva/cs313-php\ul0\cf0}}}}\f0\fs22\par
+   36b4bba..e432190  master -> master\par
+\par
+kimta@Kimmie-ASUS-Q534UX MINGW64 ~/Documents/GitHub/cs313-php/web (master)\par
+$ heroku pg:psql\par
+--> Connecting to postgresql-silhouetted-18205\par
+psql (11.1, server 10.6 (Ubuntu 10.6-1.pgdg16.04+1))\par
+WARNING: Console code page (437) differs from Windows code page (1252)\par
+         8-bit characters might not work correctly. See psql reference\par
+         page "Notes for Windows users" for details.\par
+SSL connection (protocol: TLSv1.2, cipher: ECDHE-RSA-AES256-GCM-SHA384, bits: 256, compression: off)\par
+Type "help" for help.\par
+\par
+stormy-sierra-49088::DATABASE=> select * from products;\par
+ product_id |  product_name  |   product_image    |                                       product_description                                       | product_price\par
+------------+----------------+--------------------+-------------------------------------------------------------------------------------------------+---------------\par
+          1 | Car            | car.jpg            | It's a car. Batteries not included, not required. Powered by hand.                              |          6.00\par
+          2 | Dangerous Bear | dangerous-bear.jpg | Beware. This bear is extremely dangerous.                                                       |          8.00\par
+          3 | Fish           | fish.jpg           | There is something fishy going on here...                                                       |          7.50\par
+          4 | Chill Gorilla  | gorilla.jpg        | Unlike the dangerous bear, this one is chill.                                                   |          8.80\par
+          5 | Rubber Duck    | rubber-duck.jpg    | Best partner in the bath tub.                                                                   |          9.75\par
+          6 | Rubiks Cube    | rubiks-cube.jpg    | Some say that this cube trains your intelligence. Some others claim that it's just frustration. |          9.30\par
+(6 rows)\par
+\par
+\par
+stormy-sierra-49088::DATABASE=>\par
+}
+ 
