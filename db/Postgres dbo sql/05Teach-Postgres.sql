@@ -1,4 +1,4 @@
---create Scriptures table (Team.Wk5-Core1)--
+--create Scriptures table (W05 Teach:Team Assignment_1)--
 CREATE TABLE scriptures (
     scriptures_id serial PRIMARY KEY,
     scriptures_book VARCHAR(40),
@@ -7,7 +7,7 @@ CREATE TABLE scriptures (
     scriptures_content varchar(1000)
 );
 
---Add Values to Scriptures Table (Team.Wk5-Core2)--
+--Add Values to Scriptures Table (W05 Teach:Team Assignment_2)--
 INSERT INTO scriptures(scriptures_book, scriptures_chapter, scriptures_verse, scriptures_content)
 VALUES ('John', 1, 5, 'And the light shineth in darkness; and the darkness comprehended it not.'),
         ('Doctrine and Covenants', 88, 49, 'The light shineth in darkness, and the darkness comprehendeth it not; nevertheless, the day shall come when you shall comprehend even God, being quickened in him and by him.'),
