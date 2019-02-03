@@ -24,13 +24,13 @@
         <div id="assignment-landing">
             <h1>Software Engineering II Assignments</h1>
             <ul>
-                <li><a href="01-prove.html">Week 1  Prove Assignment</a></li>
-                <li><a href="02-teach.php">Week 2 TEACH Assignment</a></li>
-                <li><a href="index.php">Week 2 Prove Assignment</a></li>
-                <li><a href="03-teach.php">Week 3 TEACH Assignment</a></li>
-                <li><a href="03-prove.php">Week 3 Prove Assignment</a></li>
-                <li><a href="">Week 4 TEACH Assignment</a></li>
-                <li><a href="">Week 4 Prove Assignment</a></li>
+                <li><a href="01-prove.html">Week 1  Prove: Assignment: HELLO WORLD</a></li>
+                <li><a href="02-teach.php">Week 2 TEACH Assignment: 3 Custom Divs</a></li>
+                <li><a href="index.php">Week 2 Prove Assignment: HOME PAGE & ASSIGNMENTS PAGE</a></li>
+                <li><a href="03-teach.php">Week 3 TEACH Assignment: HTML Form & PHP Script & Array</a></li>
+                <li><a href="03-prove.php">Week 3 Prove Assignment: Shopping Cart Module</a></li>
+                <li><a href="">Week 4 TEACH Assignment: Conference Talk Tables on Heroku Postgres</a></li>
+                <li><a href="">Week 4 Prove Assignment: Postgres DB Tables_SQL</a></li>
                 <li><a href="">Week 5 TEACH Assignment</a></li>
                 <li><a href="">Week 5 Prove Assignment</a></li>
                 <li><a href="">Week 6 TEACH Assignment</a></li>
