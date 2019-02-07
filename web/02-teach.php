@@ -17,6 +17,7 @@
         <div id="title">
             <h3>Kimberly Llanos</h3>
             <h1>CS 313:02 Week 2 Teach</h1>
+                  <?php echo date('l, F j, Y') ?> 
         </div>
         <nav>
             <label for="toggle">Show Menu</label>

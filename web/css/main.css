@@ -89,9 +89,13 @@ nav li {
 
 /*==========NAV-LINK ALL PAGES========*/
 
-nav ul {
+/* no more "margin: 0px" 
+needed more height in the header section after adding currentdate.js
+*/
+
+/*nav ul {
     margin: 0px;
-}
+}*/
 
 nav li a {
     text-decoration: none;
@@ -357,6 +361,8 @@ container {
     cursor: pointer;
 }
 
+
+
 /* ajax-cart.php styling */
 #cart {
     padding: 10px;
@@ -534,8 +540,8 @@ label {
   background-color: #45a049;
 }
 
-a {
-  color: #2196F3;
+footer a {
+  color: #228b22;
 }
 
 hr {
@@ -645,6 +651,7 @@ footer {
 
 footer ul p {
     text-align: center;
+    font-weight: 600;
 }
 
 footer ul li {
@@ -761,7 +768,7 @@ footer p {
     }
 
     #copy {
-        color: forestgreen;
+        color: #228b22;
         margin: 20px 30px -80px 40px;
     }
 

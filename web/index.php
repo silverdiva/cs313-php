@@ -12,6 +12,7 @@
         <div id="title">
             <h3>Kimberly Llanos</h3>
             <h1>CS 313:02 Week 02 Prove (Home Page)</h1>
+                <?php echo date('l, F j, Y') ?> 
         </div>
         
         <nav>
