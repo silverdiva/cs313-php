@@ -32,7 +32,7 @@
                 <li><a href="03-prove.php">Week 3 Prove Assignment: Shopping Cart Module</a></li>
                 <li><a href="">Week 4 TEACH Assignment: Conference Talk Tables on Heroku Postgres</a></li>
                 <li><a href="">Week 4 Prove Assignment: Postgres DB Tables_SQL</a></li>
-                <li><a href="v2-05-teach.php">Week 5 TEACH Assignment: Scripture DB & Form</a></li>
+                <li><a href="scriptures.php">Week 5 TEACH Assignment: Scripture DB & Form</a></li>
                 <li><a href="">Week 5 Prove Assignment</a></li>
                 <li><a href="">Week 6 TEACH Assignment</a></li>
                 <li><a href="">Week 6 Prove Assignment</a></li>
