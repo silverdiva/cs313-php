@@ -1,0 +1,28 @@
+kimta@Kimmie-ASUS-Q534UX MINGW64 ~/Documents/GitHub/cs313-php (master)
+$ heroku pg:psql
+--> Connecting to postgresql-silhouetted-18205
+psql (11.1, server 10.6 (Ubuntu 10.6-1.pgdg16.04+1))
+WARNING: Console code page (437) differs from Windows code page (1252)
+         8-bit characters might not work correctly. See psql reference
+         page "Notes for Windows users" for details.
+SSL connection (protocol: TLSv1.2, cipher: ECDHE-RSA-AES256-GCM-SHA384, bits: 256, compression: off)
+Type "help" for help.
+
+stormy-sierra-49088::DATABASE=> \dt
+               List of relations
+ Schema |     Name     | Type  |     Owner
+--------+--------------+-------+----------------
+ public | note         | table | kpjksqqhwzszlk
+ public | note_user    | table | kpjksqqhwzszlk
+ public | notes        | table | kpjksqqhwzszlk
+ public | orders       | table | kpjksqqhwzszlk
+ public | orders_items | table | kpjksqqhwzszlk
+ public | products     | table | kpjksqqhwzszlk
+ public | scriptures   | table | kpjksqqhwzszlk
+ public | speakers     | table | kpjksqqhwzszlk
+ public | talk         | table | kpjksqqhwzszlk
+ public | user_table   | table | kpjksqqhwzszlk
+(10 rows)
+
+
+stormy-sierra-49088::DATABASE=>
