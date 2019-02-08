@@ -19,30 +19,17 @@ catch (PDOException $ex)
   die();
 }
 ?>
-    <!DOCTYPE html>
-    <html>
-
-    <head>
-        <?php include 'modules/head.php'; ?>
-    </head>
-
-    <body>
-        <header>
-            <div id="title">
-                <title>CS 313 | 05 Prove: Scripture DB & Form</title>
-                <h3>Kimberly Llanos</h3>
-                <h1>CS 313:02 W05 Teach</h1>
-                <?php echo date('l, F j, Y') ?>
-            </div>
-
-            <nav>
-                <?php include 'modules/nav.php'; ?>
-            </nav>
-        </header>
-        
-        
-        <div class="container">
-            <?php
+<!DOCTYPE html>
+<html>
+<head>
+    <?php include("header.php");?>
+    
+    <link rel="stylesheet" href="oppStyle.css">
+</head>
+<body>
+<?php include("nav.php");?>
+<div class="container" >
+<?php
 if($_GET['id'] != "")
 {
     foreach ($db->query('SELECT * FROM scriptures WHERE scriptures_id =\'' . $_GET['id'] . '\'') as $row)
@@ -53,8 +40,7 @@ if($_GET['id'] != "")
     }
 }
 ?>
-        </div>
-        <?php include 'modules/footer.php';?>
-    </body>
-
-    </html>
+</div>
+<?php include("footer.php");?>
+</body>
+</html>

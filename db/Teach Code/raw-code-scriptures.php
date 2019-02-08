@@ -25,38 +25,28 @@ catch (PDOException $ex)
 
 ?>
 
-    <!DOCTYPE html>
-    <html>
+<!DOCTYPE html>
+<html>
+<head>
+    <?php include("header.php");?>
+    
+    <link rel="stylesheet" href="oppStyle.css">
+</head>
+<body>
 
-    <head>
-        <?php include 'modules/head.php'; ?>
-        <title>CS 313 | 05 Teach: RAW Scripture Querying</title>
-    </head>
+<?php include("nav.php");?>
 
-    <body>
-        <header>
-            <div id="title">
-                <title>CS 313 | 05 Prove: Scripture DB & Form</title>
-                <h3>Kimberly Llanos</h3>
-                <h1>CS 313:02 W05 Teach</h1>
-                <?php echo date('l, F j, Y') ?>
-            </div>
-
-            <nav>
-                <?php include 'modules/nav.php'; ?>
-            </nav>
-        </header>
-
-        <div class="container">
-
-            <form action="" method="post">
-
-                Book: <input type="text" name="book">
-                <input type="submit" name="submit" value="Submit">
-            </form>
+<div class="container" >
 
 
-            <?php
+<form action="" method="post">
+
+Book: <input type="text" name="book">
+<input type="submit" name="submit" value="Submit">
+</form>
+
+
+<?php
 if($_POST['book'] != "")
 {
     foreach ($db->query('SELECT * FROM scriptures WHERE scriptures_book =\'' . $_POST['book'] . '\'') as $row)
@@ -69,10 +59,9 @@ if($_POST['book'] != "")
 
 ?>
 
-        </div>
+</div>
 
-        <?php include 'modules/footer.php';?>
+<?php include("footer.php");?>
 
-    </body>
-
-    </html>
+</body>
+</html>
