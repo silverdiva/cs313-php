@@ -11,8 +11,8 @@ class DB {
 
     // ATTEMPT CONNECT
     try {
-      $str = "postgres:host=" . DB_HOST . ";charset=" . DB_CHARSET;
-      if (defined("DB_NAME")) { $str .= ";dbname=" . DB_NAME; }
+      $str = "mysql:host=" . DB_HOST . ";charset=" . DB_CHARSET;
+      if (defined('DB_NAME')) { $str .= ";dbname=" . DB_NAME; }
       $this->pdo = new PDO(
         $str, DB_USER, DB_PASSWORD, [
           PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
