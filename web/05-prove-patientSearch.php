@@ -62,7 +62,7 @@ if($_POST['name'] != "")
     foreach ($db->query('SELECT * FROM patient_2 WHERE patient_firstname =\'' . $_POST['firstname'] . '\'') as $row)
     {
     echo "<strong>" . $row['patient_firstname'] . " " . $row['patient_lastname'] . ":" . $row['patient_email'] . " - </strong>";
-    echo "<a href='patientDetails.php?id=". $row['patient_id'] . "'> 'Patient Details' </a>";
+    echo "<a href='05-prove-patientDetails.php?id=". $row['patient_id'] . "'> 'Patient Details' </a>";
     echo '<br/>';
     }
 }
