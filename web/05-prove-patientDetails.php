@@ -45,7 +45,7 @@ catch (PDOException $ex)
             <?php
 if($_GET['id'] != "")
 {
-    foreach ($db->query('SELECT * FROM patient_2 WHERE patient_2_id =\'' . $_GET['id'] . '\'') as $row)
+    foreach ($db->query('SELECT * FROM patient_2 WHERE patient_id =\'' . $_GET['id'] . '\'') as $row)
     {
     echo "<strong>" . $row['patient_firstname'] . " " . $row['patient_lastname'] . ":" . $row['patient_email'] . " - </strong>";
     echo "\"" . $row['patient_address'] . "\"";
