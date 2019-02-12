@@ -4,13 +4,17 @@ session_start();
 try
 {
   $dbUrl = getenv('DATABASE_URL');
+
   $dbOpts = parse_url($dbUrl);
+
   $dbHost = $dbOpts["host"];
   $dbPort = $dbOpts["port"];
   $dbUser = $dbOpts["user"];
   $dbPassword = $dbOpts["pass"];
   $dbName = ltrim($dbOpts["path"],'/');
+
   $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
+
   $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 }
 catch (PDOException $ex)
@@ -18,20 +22,23 @@ catch (PDOException $ex)
   echo 'Error!: ' . $ex->getMessage();
   die();
 }
+
 ?>
+
     <!DOCTYPE html>
     <html>
 
     <head>
         <?php include 'modules/head.php'; ?>
+        <title>CS 313 | 05 Prove: Chiro Patient Search</title>
     </head>
 
     <body>
         <header>
             <div id="title">
-                <title>CS 313 | 05 Prove: Chiro Patient Details</title>
+                <title>CS 313 | 05 Prove: Chiropractic Patient Search</title>
                 <h3>Kimberly Llanos</h3>
-                <h1>CS 313:02 W05 Prove: Patient Details</h1>
+                <h1>CS 313:02 W05 Prove</h1>
                 <?php echo date('l, F j, Y') ?>
             </div>
 
@@ -39,22 +46,33 @@ catch (PDOException $ex)
                 <?php include 'modules/nav.php'; ?>
             </nav>
         </header>
-        
-        
+
         <div class="container">
+
+            <form action="" method="post">
+
+                Patient Name: <input type="text" name="name">
+                <input type="submit" name="submit" value="Submit">
+            </form>
+
+
             <?php
-if($_GET['id'] != "")
+if($_POST['name'] != "")
 {
-    foreach ($db->query('SELECT * FROM patient_2 WHERE patient_2_id =\'' . $_GET['id'] . '\'') as $row)
+    foreach ($db->query('SELECT * FROM patient_2 WHERE patient_firstname =\'' . $_POST['firstname'] . '\'') as $row)
     {
     echo "<strong>" . $row['patient_firstname'] . " " . $row['patient_lastname'] . ":" . $row['patient_email'] . " - </strong>";
-    echo "\"" . $row['patient_address'] . "\"";
+    echo "<a href='patientDetails.php?id=". $row['patient_id'] . "'> 'Patient Details' </a>";
     echo '<br/>';
     }
 }
+
 ?>
+
         </div>
+
         <?php include 'modules/footer.php';?>
+
     </body>
 
     </html>
