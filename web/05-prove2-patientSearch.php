@@ -59,8 +59,8 @@ catch (PDOException $ex)
             <?php
 if($_POST['firstname'] != "")
 {
-  if($_POST['name'] != "")
-{
+    //create a variable above the foreach with the value of the query string and 
+    //then do an alert on the query and then give the variable to the query command
     $queryString = 'SELECT * FROM patient_2 WHERE patient_firstname =\'' . $_POST['firstname'] . '\'';
 
     echo "<h1>" . $queryString . "/<h1>";
