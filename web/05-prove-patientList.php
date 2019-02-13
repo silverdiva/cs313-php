@@ -30,15 +30,15 @@ catch (PDOException $ex)
 
     <head>
         <?php include 'modules/head.php'; ?>
-        <title>CS 313 | 05 Teach: RAW Scripture Querying</title>
+        <title>CS 313 | 05 Prove: Chiro Patient Search</title>
     </head>
 
     <body>
         <header>
             <div id="title">
-                <title>CS 313 | 05 Prove: Scripture DB & Form</title>
+                <title>CS 313 | 05 Prove: Chiropractic Patient Search</title>
                 <h3>Kimberly Llanos</h3>
-                <h1>CS 313:02 W05 Teach</h1>
+                <h1>CS 313:02 W05 Prove</h1>
                 <?php echo date('l, F j, Y') ?>
             </div>
 
@@ -51,19 +51,32 @@ catch (PDOException $ex)
 
             <form action="" method="post">
 
-                Book: <input type="text" name="book">
+                /<!--Patient Name: <input type="text" name="firstname">
                 <input type="submit" name="submit" value="Submit">
+                -->
             </form>
 
 
             <?php
-if($_POST['book'] != "")
+if($_POST['firstname'] != "")
 {
-    foreach ($db->query('SELECT * FROM scriptures WHERE scriptures_book =\'' . $_POST['book'] . '\'') as $row)
+    //create a variable above the foreach with the value of the query string 
+    $queryString = 'SELECT * FROM patient_2 WHERE patient_firstname =\'' . $_POST['firstname'] . '\'';
+    
+    //then do an alert on the query and then give the variable to the query command
+    echo "<h1>" . $queryString . "/<h1>";
+    
+    foreach ($db->query($queryString) as $row)
     {
-    echo "<strong>" . $row['scriptures_book'] . " " . $row['scriptures_chapter'] . ":" . $row['scriptures_verse'] . " - </strong>";
-    echo "<a href='scriptureDetails.php?id=". $row['scriptures_id'] . "'> 'Scripture Details' </a>";
+        
+    //foreach ($db->query('SELECT * FROM patient_2 WHERE patient_firstname =\'' . $_POST['firstname'] . '\'') as $row)
+    //{
+        
+        
+    echo "<strong>" . $row['patient_firstname'] . " " . $row['patient_lastname'] . ":" . $row['patient_email'] . " - </strong>";
+    echo "<a href='05-prove2-patientDetails.php?id=". $row['patient_id'] . "'> 'Patient Details' </a>";
     echo '<br/>';
+    print_r($row);
     }
 }
 
