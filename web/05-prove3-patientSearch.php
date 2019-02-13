@@ -51,7 +51,7 @@ catch (PDOException $ex)
 
             <form action="" method="post">
 
-                Patient Name: <input type="text" name="name">
+                Patient Name: <input type="text" name="firstname">
                 <input type="submit" name="submit" value="Submit">
             </form>
 
