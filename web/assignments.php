@@ -33,7 +33,7 @@
                 <li><a href="">Week 4 TEACH Assignment: Conference Talk Tables on Heroku Postgres</a></li>
                 <li><a href="">Week 4 Prove Assignment: Postgres DB Tables_SQL</a></li>
                 <li><a href="scriptures.php">Week 5 TEACH Assignment: Scripture DB & Form (NO CSS)</a></li>
-                 <li><a href="05-prove3-patientSearch.php">Week 5 Prove Assignment: Chiropractic Patient DB</a></li>
+                 <li><a href="05-prove3-patientSearch.php">Week 5 Prove Assignment: Chiropractic Patient DB Forms</a></li>
                   <li><a href="">Week 6 TEACH Assignment</a></li>
                 <li><a href="">Week 6 Prove Assignment</a></li>
                 <li><a href="">Stay Tuned!!</a></li>
