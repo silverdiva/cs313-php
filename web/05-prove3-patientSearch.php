@@ -75,7 +75,9 @@ if($_POST['firstname'] != "")
     echo "<strong>" . $row['patient_firstname'] . " " . $row['patient_lastname'] . ":" . $row['patient_email'] . " - </strong>";
     echo "<a href='05-prove2-patientDetails.php?id=". $row['patient_id'] . "'> 'Patient Details' </a>";
     echo '<br/>';
-    print_r($row);
+        
+    // for debugging, once everything validates and retirns data comment out 
+    //print_r($row);
     }
 }
 
