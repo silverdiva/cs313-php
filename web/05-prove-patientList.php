@@ -61,7 +61,7 @@ catch (PDOException $ex)
 if($_POST['firstname'] != "")
 {
     foreach ($db->query('SELECT * FROM patient_2 WHERE patient_firstname =\'' . $_POST['firstname'] . '\'') as $row)
-
+    {
     
     //*****  another way to do this:  ******//
         
