@@ -10,10 +10,9 @@
 <body>
     <header>
         <div id="title">
-
             <h3>Kimberly Llanos</h3>
             <h1>CS 313:02 W02 Prove (Assignments Page)</h1>
-                <?php echo date('l, F j, Y') ?> 
+                <?php include 'modules/header.php'; ?> 
         </div>
 
         <nav>
@@ -27,14 +26,14 @@
             <ul>
                 <li><a href="01-prove.html">Week 1  Prove: Assignment: HELLO WORLD</a></li>
                 <li><a href="02-teach.php">Week 2 TEACH Assignment: 3 Custom Divs</a></li>
-                <li><a href="index.php">Week 2 Prove Assignment: HOME PAGE & ASSIGNMENTS PAGE</a></li>
-                <li><a href="03-teach.php">Week 3 TEACH Assignment: HTML Form & PHP Script & Array</a></li>
+                <li><a href="03-teach.php">Week 3 TEACH Assignment: HTML Form & PHP Array, Script</a></li>
                 <li><a href="03-prove.php">Week 3 Prove Assignment: Shopping Cart Module</a></li>
                 <li><a href="">Week 4 TEACH Assignment: Conference Talk Tables on Heroku Postgres</a></li>
                 <li><a href="">Week 4 Prove Assignment: Postgres DB Tables_SQL</a></li>
                 <li><a href="scriptures.php">Week 5 TEACH Assignment: Scripture DB & Form (NO CSS)</a></li>
-                 <li><a href="05-prove3-patientSearch.php">Week 5 Prove Assignment: Chiropractic Patient DB Forms</a></li>
-                  <li><a href="">Week 6 TEACH Assignment</a></li>
+                <li><a href="05-prove-patientList.php">Week 5 Prove Assignment: Chiropractic Patient List</a></li>
+                <li><a href="05-prove3-patientSearch.php">Week 5 Prove Assignment: Chiropractic Patient Search</a></li>
+                <li><a href="">Week 6 TEACH Assignment</a></li>
                 <li><a href="">Week 6 Prove Assignment</a></li>
                 <li><a href="">Stay Tuned!!</a></li>
             </ul>

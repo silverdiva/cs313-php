@@ -6,3 +6,7 @@ CREATE TABLE patient_2  (
    patient_phone  varchar(25) NULL,
    patient_address  varchar(255) NULL
 );
+
+
+
+
