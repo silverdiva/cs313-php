@@ -33,8 +33,9 @@
                 <li><a href="scriptures.php">Week 5 TEACH Assignment: Scripture DB & Form (NO CSS)</a></li>
                 <li><a href="05-prove-patientList.php">Week 5 Prove Assignment: Chiropractic Patient List</a></li>
                 <li><a href="05-prove3-patientSearch.php">Week 5 Prove Assignment: Chiropractic Patient Search</a></li>
-                <li><a href="team06.php">Week 6 TEACH Assignment: Scripture Lookup</a></li>
+                <li><a href="06-teach-scriptureAdd.php">Week 6 TEACH Assignment: Scripture Lookup</a></li>
                 <li><a href="">Week 6 Prove Assignment</a></li>
+                <li><a href="07-teach-signUp.php">Week 7 TEACH Assignment: User Account Password Hashing</a></li>
                 <li><a href="">Stay Tuned!!</a></li>
             </ul>
         </div>

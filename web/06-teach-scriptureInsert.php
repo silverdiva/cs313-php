@@ -30,15 +30,15 @@ catch (PDOException $ex)
 
     <head>
         <?php include 'modules/head.php'; ?>
-        <title>CS 313 | 05 Prove: Chiro Patient Search</title>
+        <title>CS 313 | 06 TEACH: Scripture Insert</title>
     </head>
 
     <body>
         <header>
             <div id="title">
-                <title>CS 313 | 05 Prove: Chiropractic Patient Search</title>
+                <title>CS 313 | 06 TEACH: Scripture Insert</title>
                 <h3>Kimberly Llanos</h3>
-                <h1>CS 313:02 W05 Prove</h1>
+                <h1>CS 313:02 W06 TEACH Scripture Insert</h1>
                 <?php echo date('l, F j, Y') ?>
             </div>
 
@@ -48,49 +48,47 @@ catch (PDOException $ex)
         </header>
 
         <div class="container">
-
+            <h3>Insert a Scripture</h3>
             <form action="" method="post">
-
-                Patient Name: <input type="text" name="firstname">
+                Book: <input type="text" id="book_i" name="book">
+                Chapter: <input type="text" id="chapter_i" name="chapter">
+                Verse: <input type="text" id="verse_i" name="verse">
+                Content: <input type="text" id="content_i" name="content">
+                </form>
+                <!--
                 <input type="submit" name="submit" value="Submit">
-            </form>
+                -->
+            
+               <!-- 
+                <input type="text" id="book_i" placeholder="Book">
+                <input type="number" id="chapter_i" placeholder="Chapter">
+                <input type="number" id="verse_i" placeholder="Verse">
+                <input type="text" id="content_i" placeholder="Content">
+                -->
+        
+        <?php  ?>
+        <input type="checkbox" name="faith" value="Faith" id="faith">Faith
+        <br>
+        <input type="checkbox" name="hope" value="Hope" id="hope">Hope
+        <br>
+        <input type="checkbox" name="charity" value="Charity" id="charity">Charity
+        <br>
+        <button id="btn_i">Go</button>
 
+        <div id="output"></div>
+    </div>
+            
 
-            <?php
-if($_POST['firstname'] != "")
-{
-    //create a variable above the foreach with the value of the query string 
-    $queryString = 'SELECT * FROM patient_2 WHERE patient_firstname =\'' . $_POST['firstname'] . '\'';
-    
-    //then do an alert on the query and then give the variable to the query command
-    echo "<h1>" . $queryString . "/<h1>";
-    
-    foreach ($db->query($queryString) as $row)
-    {
-        
-    //foreach ($db->query('SELECT * FROM patient_2 WHERE patient_firstname =\'' . $_POST['firstname'] . '\'') as $row)
-    //{
-        
-        
-    echo "<strong>" . $row['patient_firstname'] . " " . $row['patient_lastname'] . ":" . $row['patient_email'] . " - </strong>";
-    echo "<a href='05-prove2-patientDetails.php?id=". $row['patient_id'] . "'> 'Patient Details' </a>";
-    echo '<br/>';
-        
-    // for debugging, once everything validates and retirns data comment out 
-    //print_r($row);
-    }
-}
-
-?>
-        </div>
-        
-        <footer>
-            <?php include 'modules/footer.php';?>
+       <footer>
+        <?php include 'modules/footer.php';?>
         </footer>
-                <!-- JavaScript using jQuery library -->
+        
+        <!-- JavaScript using jQuery library -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
         <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+
     </body>
-</html>
+
+    </html>
