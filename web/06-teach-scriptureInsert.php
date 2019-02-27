@@ -66,7 +66,11 @@ catch (PDOException $ex)
                 <input type="text" id="content_i" placeholder="Content">
                 -->
         
-        <?php  ?>
+        <?php  
+        error_reporting(E_ALL);
+        ini_set('display_errors', 1);
+        ?>
+
         <input type="checkbox" name="faith" value="Faith" id="faith">Faith
         <br>
         <input type="checkbox" name="hope" value="Hope" id="hope">Hope

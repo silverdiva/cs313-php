@@ -50,14 +50,14 @@ catch (PDOException $ex)
         <div class="container">
 
                 
-            <!--<form action="" method="post">
-                /
-                <!--Patient Name: <input type="text" name="firstname">
+            <form action="" method="post">
+                
+               <--Patient Name: <input type="text" name="firstname">
                 <input type="submit" name="submit" value="Submit">
+                -->
                 
-                
-            </form>
-            -->
+               </form>
+            
             
             <?php
 if($_POST['firstname'] != "")
