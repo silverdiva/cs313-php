@@ -1,12 +1,9 @@
 <?php
 session_start();
-<?php
-
-function get_db() {
-	$db = NULL;
 	//start session to store credentials
 	session_start();
-	try {
+	try 
+	{
 		// default Heroku Postgres configuration URL
 		$dbUrl = getenv('DATABASE_URL');
 		$dbopts = parse_url($dbUrl);
@@ -20,15 +17,14 @@ function get_db() {
 		// this line makes PDO give us an exception when there are problems, and can be very helpful in debugging!
 		$db->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
 	}
-	catch (PDOException $ex) {
+	catch (PDOException $ex) 
+	{
 		// If this were in production, you would not want to echo
 		// the details of the exception.
 		echo "Error connecting to DB. Details: $ex";
 		die();
-	}
-	return $db;
-    
-}
+		print_r($ex);
+}    
 ?>
 
 <?
@@ -37,7 +33,7 @@ function get_db() {
 //define('PATH_LIB', __DIR__ . DIRECTORY_SEPARATOR);
 //require __PATH_LIB__ . DIRECTORY_SEPARATOR . "lib" . DIRECTORY_SEPARATOR . "lib-db.php";
 	//require 'dbConnect';
-require './lib-db.php';
+require '/lib-db.php';
 require '/lib-cart.php';
 $cartLib = new Cart();
 $products = $cartLib->pGet();
