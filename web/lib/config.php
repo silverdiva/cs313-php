@@ -4,7 +4,7 @@
 
 define("DB_HOST", "host");
 define("DB_NAME", "postres");
-define("DB_CHARSET'" "utf8");
+define("DB_CHARSET," "utf8");
 define("DB_USER", "postgres");
 define("DB_PASSWORD", '');
 

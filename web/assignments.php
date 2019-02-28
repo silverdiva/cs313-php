@@ -37,6 +37,7 @@
                 <li><a href="06-teach-scriptureInsert.php">Week 6 TEACH Assignment: Scripture Lookup</a></li>
                 <li><a href="">Week 6 Prove Assignment</a></li>
                 <li><a href="07-teach-signUp.php">Week 7 TEACH Assignment: User Account Password Hashing</a></li>
+                <li><a href="indexEmployee.php">TEST: W08 Db Connection Code (Employee Tables)</a></li>
                 <li><a href="">Stay Tuned!!</a></li>
             </ul>
         </div>
