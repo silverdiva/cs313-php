@@ -27,12 +27,13 @@
                 <li><a href="01-prove.html">Week 1  Prove: Assignment: HELLO WORLD</a></li>
                 <li><a href="02-teach.php">Week 2 TEACH Assignment: 3 Custom Divs</a></li>
                 <li><a href="03-teach.php">Week 3 TEACH Assignment: HTML Form & PHP Array, Script</a></li>
-                <li><a href="03-prove.php">Week 3 Prove Assignment: Shopping Cart Module</a></li>
+                <li><a href="03-prove-v2.php">Week 3 Prove Assignment: Shopping Cart Module</a></li>
                 <li><a href="">Week 4 TEACH Assignment: Conference Talk Tables on Heroku Postgres</a></li>
                 <li><a href="">Week 4 Prove Assignment: Postgres DB Tables_SQL</a></li>
                 <li><a href="scriptures.php">Week 5 TEACH Assignment: Scripture DB & Form (NO CSS)</a></li>
                 <li><a href="05-prove-patientList.php">Week 5 Prove Assignment: Chiropractic Patient List</a></li>
                 <li><a href="05-prove3-patientSearch.php">Week 5 Prove Assignment: Chiropractic Patient Search</a></li>
+                <li><a href="05-proveTest-patientList.php">Week 5 Prove Assignment: Chiropractic Patient Search</a></li>
                 <li><a href="06-teach-scriptureInsert.php">Week 6 TEACH Assignment: Scripture Lookup</a></li>
                 <li><a href="">Week 6 Prove Assignment</a></li>
                 <li><a href="07-teach-signUp.php">Week 7 TEACH Assignment: User Account Password Hashing</a></li>

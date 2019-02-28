@@ -6,49 +6,46 @@ class DB {
   public $lastID = null;
 
   function __construct() {
-  // __construct() : connect to the database
-  // PARAM : DB_HOST, DB_CHARSET, DB_NAME, DB_USER, DB_PASSWORD
+//start session to store credentials [Postgres db on Heroku app]
+session_start();
+try
+{
+  $dbUrl = getenv('DATABASE');
+  $dbOpts = parse_url($dbUrl);
+  $dbHost = $dbOpts["host"];
+  $dbPort = $dbOpts["port"];
+  $dbUser = $dbOpts["user"];
+  $dbPassword = $dbOpts["pass"];
+  $dbName = ltrim($dbOpts["path"],'/');
 
-    // ATTEMPT CONNECT
-    try {
-      $str = "postgres:host=" . DB_HOST . ";charset=" . DB_CHARSET;
-      if (defined("DB_NAME")) { $str .= ";dbname=" . DB_NAME; }
-      $this->pdo = new PDO(
-        $str, DB_USER, DB_PASSWORD, [
-          PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-          PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-          PDO::ATTR_EMULATE_PREPARES => false
-        ]
-      );
-      return true;
-    }
+  $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
 
-    // ERROR - DO SOMETHING HERE
-    // THROW ERROR MESSAGE OR SOMETHING
-    catch (Exception $ex) {
-      print_r($ex);
-      die();
-    }
-  }
-
+  $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+}
+catch (PDOException $ex)
+{
+  echo 'Error!: ' . $ex->getMessage();
+  die();
+	//print_r for debugging
+	print_r($ex);
+}
   function __destruct() {
   // __destruct() : close connection when done
-
-    if ($this->stmt !== null) { $this->stmt = null; }
-    if ($this->pdo !== null) { $this->pdo = null; }
+    if ($db->stmt !== null) { $db->stmt = null; }
+    if ($db->pdo !== null) { $db->pdo = null; }
   }
 
   function start() {
   // start() : auto-commit off
 
-    $this->pdo->beginTransaction();
+    $db->pdo->beginTransaction();
   }
 
   function end($commit=1) {
   // end() : commit or roll back?
 
-    if ($commit) { $this->pdo->commit(); }
-    else { $this->pdo->rollBack(); }
+    if ($commit) { $db->pdo->commit(); }
+    else { $db->pdo->rollBack(); }
   }
  
   function exec($sql, $data=null) {
@@ -57,14 +54,14 @@ class DB {
   //       $data : array of data
  
     try {
-      $this->stmt = $this->pdo->prepare($sql);
-      $this->stmt->execute($data);
-      $this->lastID = $this->pdo->lastInsertId();
+      $db->stmt = $db->pdo->prepare($sql);
+      $db->stmt->execute($data);
+      $db->lastID = $db->pdo->lastInsertId();
     } catch (Exception $ex) {
-      $this->error = $ex;
+      $db->error = $ex;
       return false;
     }
-    $this->stmt = null;
+    $db->stmt = null;
     return true;
   }
 
@@ -77,27 +74,27 @@ class DB {
 
     $result = false;
     try {
-      $this->stmt = $this->pdo->prepare($sql);
-      $this->stmt->execute($cond);
+      $db->stmt = $db->pdo->prepare($sql);
+      $db->stmt->execute($cond);
       if (isset($key)) {
         $result = array();
         if (isset($value)) {
-          while ($row = $this->stmt->fetch(PDO::FETCH_NAMED)) {
+          while ($row = $db->stmt->fetch(PDO::FETCH_NAMED)) {
             $result[$row[$key]] = $row[$value];
           }
         } else {
-          while ($row = $this->stmt->fetch(PDO::FETCH_NAMED)) {
+          while ($row = $db->stmt->fetch(PDO::FETCH_NAMED)) {
             $result[$row[$key]] = $row;
           }
         }
       } else {
-        $result = $this->stmt->fetchAll();
+        $result = $db->stmt->fetchAll();
       }
     } catch (Exception $ex) {
-      $this->error = $ex;
+      $db->error = $ex;
       return false;
     }
-    $this->stmt = null;
+    $db->stmt = null;
     return $result;
   }
 }
