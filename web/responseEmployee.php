@@ -6,7 +6,7 @@ class Employee {
     function __construct() {
 
                     $db = new dbObj();
-                    $connString =  $db->get_db();
+                    $db =  $db->get_db();
                     $db->conn = $connString;
     }
    
