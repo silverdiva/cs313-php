@@ -2,8 +2,8 @@
 /* [INIT] */
 session_start();
 require __DIR__ . DIRECTORY_SEPARATOR . "lib" . DIRECTORY_SEPARATOR . "dbConnect.php";
-require PATH_LIB . "lib-db.php";
-require PATH_LIB . "lib-cart.php";
+require __DIR__ . DIRECTORY_SEPARATOR . "lib" . DIRECTORY_SEPARATOR . "lib-db.php";
+require __DIR__ . DIRECTORY_SEPARATOR . "lib" . DIRECTORY_SEPARATOR . "lib-cart.php";
 $cartLib = new Cart();
 
 /* [HANDLE AJAX REQUEST] */
