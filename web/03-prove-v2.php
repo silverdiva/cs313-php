@@ -2,8 +2,9 @@
 session_start();
 require __DIR__ . DIRECTORY_SEPARATOR . "lib" . DIRECTORY_SEPARATOR . "/dbConnect.php";
 define('PATH_LIB', __DIR__ . DIRECTORY_SEPARATOR);
-require PATH_LIB . "/lib-db.php";
-require PATH_LIB . "/lib-cart.php";
+require __PATH_LIB__ . DIRECTORY_SEPARATOR . "lib" . DIRECTORY_SEPARATOR . "/lib-db.php";
+require "lib-db.php";
+require "lib-cart.php";
 $cartLib = new Cart();
 $products = $cartLib->pGet();
 ?> 
