@@ -24,8 +24,8 @@ catch (PDOException $ex)
 ?>   
     
 <?php
-//session_start();
-//require __DIR__ . DIRECTORY_SEPARATOR . "lib" . DIRECTORY_SEPARATOR . "config.php";
+session_start();
+require __DIR__ . DIRECTORY_SEPARATOR . "lib" . DIRECTORY_SEPARATOR . "dbConnect.php";
 require PATH_LIB . "lib-db.php";
 require PATH_LIB . "lib-cart.php";
 $cartLib = new Cart();

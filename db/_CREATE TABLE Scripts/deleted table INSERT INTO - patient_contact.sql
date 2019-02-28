@@ -1,1 +1,0 @@
-INSERT INTO  patient_contact ()
