@@ -1,5 +1,4 @@
 <?php
-session_start();
 	//start session to store credentials
 	session_start();
 	try 
