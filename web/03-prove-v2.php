@@ -1,28 +1,3 @@
-   
-<?php
-//start session, store credentials [my local MySQL db using PHPAdmin/xampp]
-session_start();
-try
-{
-  $dbUrl = getenv('DATABASE');
-  $dbOpts = parse_url($dbUrl);
-  $dbHost = $dbOpts["host"];
-  $dbPort = $dbOpts["port"];
-  $dbUser = $dbOpts["user"];
-  $dbPassword = $dbOpts["pass"];
-  $dbName = ltrim($dbOpts["path"],'/');
-
-  $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
-
-  $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-}
-catch (PDOException $ex)
-{
-  echo 'Error!: ' . $ex->getMessage();
-  die();
-}
-?>   
-    
 <?php
 session_start();
 require __DIR__ . DIRECTORY_SEPARATOR . "lib" . DIRECTORY_SEPARATOR . "dbConnect.php";
