@@ -1,5 +1,6 @@
 <?php
 session_start();
+require __DIR__ . DIRECTORY_SEPARATOR . "lib" . DIRECTORY_SEPARATOR . "dbConnect.php";
 define('PATH_LIB', __DIR__ . DIRECTORY_SEPARATOR);
 require PATH_LIB . "lib-db.php";
 require PATH_LIB . "lib-cart.php";

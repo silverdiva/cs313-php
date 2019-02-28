@@ -1,5 +1,6 @@
+
 <?php
-include("dbConnect.php");
+include("connection.php");
 class Employee {
     protected $conn;
     protected $data = array();
@@ -18,3 +19,8 @@ class Employee {
     }
 }
 ?>
+
+
+<!--employee test pages use [connection.php] to establish 
+//a db connection to heroku postgres
+//this file has been replaced by dbConnect.php
