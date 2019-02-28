@@ -1,9 +1,13 @@
 <?php
 /* [INIT] */
 session_start();
-require __DIR__ . DIRECTORY_SEPARATOR . "lib" . DIRECTORY_SEPARATOR . "dbConnect.php";
-require __DIR__ . DIRECTORY_SEPARATOR . "lib" . DIRECTORY_SEPARATOR . "lib-db.php";
-require __DIR__ . DIRECTORY_SEPARATOR . "lib" . DIRECTORY_SEPARATOR . "lib-cart.php";
+//*******......learn how to use DEFINE PATH and require DIR.....*******//
+//require __DIR__ . DIRECTORY_SEPARATOR . "lib" . DIRECTORY_SEPARATOR . "dbConnect.php";
+//define('PATH_LIB', __DIR__ . DIRECTORY_SEPARATOR);
+//require __PATH_LIB__ . DIRECTORY_SEPARATOR . "lib" . DIRECTORY_SEPARATOR . "lib-db.php";
+require "dbConnect";
+require "./lib-db.php";
+require "./lib-cart.php";
 $cartLib = new Cart();
 
 /* [HANDLE AJAX REQUEST] */

@@ -5,9 +5,9 @@ class Employee {
     protected $data = array();
     function __construct() {
 
-                    $db = new dbObj();
+                    $db = new db();
                     $db =  $db->get_db();
-                    $db->conn = $connString;
+                    $db->conn = $db;
     }
    
     public function getEmployees() {
