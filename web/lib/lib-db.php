@@ -29,6 +29,7 @@ catch (PDOException $ex)
 	//print_r for debugging
 	print_r($ex);
 }
+  }
   function __destruct() {
   // __destruct() : close connection when done
     if ($db->stmt !== null) { $db->stmt = null; }
