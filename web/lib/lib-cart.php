@@ -11,7 +11,7 @@ class Cart {
   // pGet () : get all products
 
     $sql = "SELECT * FROM 'products'";
-    return $db->fetch($sql, null, "product_id");
+    return $pdo->fetch($sql, null, "product_id");
   }
 
   function pAdd ($name, $img, $desc, $price) {
