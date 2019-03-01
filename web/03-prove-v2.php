@@ -28,8 +28,8 @@
 
 <?
 //*******......learn how to use DEFINE PATH and require DIR.....*******//
-require 'lib-db.php';
-require 'lib-cart.php';
+require 'lib/lib-db.php';
+require 'lib/lib-cart.php';
 $cartLib = new Cart();
 $products = $cartLib->pGet();
 ?> 
