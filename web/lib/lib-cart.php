@@ -1,5 +1,8 @@
 <?php
 class Cart extends DB {
+	function __construct() {
+		parent::__construct();
+	}
   /* [PRODUCTS] */
   function pGet () {
   // pGet () : get all products

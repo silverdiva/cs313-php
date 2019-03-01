@@ -6,8 +6,8 @@ session_start();
 //define('PATH_LIB', __DIR__ . DIRECTORY_SEPARATOR);
 //require __PATH_LIB__ . DIRECTORY_SEPARATOR . "lib" . DIRECTORY_SEPARATOR . "lib-db.php";
 	//require "dbConnect";
-require "./lib-db.php";
-require "./lib-cart.php";
+require "lib/lib-db.php";
+require "lib/lib-cart.php";
 $cartLib = new Cart();
 
 /* [HANDLE AJAX REQUEST] */
