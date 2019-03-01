@@ -1,7 +1,10 @@
 <?php
-class Cart extends DB {
+class Cart {
+	private $db = null;
+	
 	function __construct() {
-		parent::__construct();
+		//parent::__construct();
+		$db = new DB();
 	}
   /* [PRODUCTS] */
   function pGet () {
