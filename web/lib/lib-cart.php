@@ -4,7 +4,7 @@ class Cart {
 	
 	function __construct() {
 		//parent::__construct();
-		$this->db = new DB();
+		$this->db = new DB;
 	}
   /* [PRODUCTS] */
   function pGet () {

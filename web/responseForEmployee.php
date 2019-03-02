@@ -5,7 +5,7 @@ class Employee {
     protected $data = array();
     function __construct() {
 
-                    $db = new db();
+                    $db = new DB;
                     $db =  $db->get_db();
                     $db->conn = $db;
     }
