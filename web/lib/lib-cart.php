@@ -11,7 +11,7 @@ class Cart {
   // pGet () : get all products
 
     $sql = "SELECT * FROM 'products'";
-    return $pdo->fetch($sql, null, "product_id");
+    return $db->fetch($sql, null, "product_id");
   }
 
   function pAdd ($name, $img, $desc, $price) {
@@ -66,6 +66,8 @@ class Cart {
     // Finalize
     $db->end($pass);
     return $pass;
+	  //for debugging
+	 print_r($pass);
   }
 
   function oGet ($id) {
@@ -77,6 +79,8 @@ class Cart {
     $sql = "SELECT * FROM 'orders_items' LEFT JOIN 'products' USING ('product_id') WHERE 'orders_items'.order_id=?";
     $order['items'] = $db->fetch($sql, $cond, "product_id");
     return $order;
+	  // for debugging
+	  print_r($order);
   }
 }
 ?>
