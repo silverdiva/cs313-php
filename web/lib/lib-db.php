@@ -20,7 +20,7 @@ try
 
   $pdo = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
 
-  $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+ $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 }
 catch (PDOException $ex)
 {
@@ -39,14 +39,14 @@ catch (PDOException $ex)
   function start() {
   // start() : auto-commit off
 
-    $pdo->beginTransaction();
+   $this->pdo->beginTransaction();
   }
 
   function end($commit=1) {
   // end() : commit or roll back?
 
-    if ($commit) { $pdo->commit(); }
-    else { $pdo->rollBack(); }
+    if ($commit) {$this->pdo->commit(); }
+    else {$this->pdo->rollBack(); }
   }
  
   function exec($sql, $data=null) {
@@ -55,9 +55,9 @@ catch (PDOException $ex)
   //       $data : array of data
  
     try {
-      $stmt = $pdo->prepare($sql);
+      $stmt =$this->pdo->prepare($sql);
       $stmt->execute($data);
-      $lastID = $pdo->lastInsertId();
+      $lastID =$this->pdo->lastInsertId();
     } catch (Exception $ex) {
       $error = $ex;
       return false;
@@ -75,7 +75,7 @@ catch (PDOException $ex)
 
     $result = false;
     try {
-      $stmt = $pdo->prepare($sql);
+      $stmt = $this->pdo->prepare($sql);
       $stmt->execute($cond);
       if (isset($key)) {
         $result = array();
