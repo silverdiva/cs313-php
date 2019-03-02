@@ -24,7 +24,7 @@ catch (PDOException $ex)
   
    <?php
     include("responseEmployee.php");
-    $newObj = new Employee();
+    $newObj = new Employee;
     $emps = $newObj->getEmployees();
 ?>
 <!DOCTYPE html>
