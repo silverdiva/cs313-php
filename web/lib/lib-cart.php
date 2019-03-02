@@ -4,14 +4,16 @@ class Cart {
 	
 	function __construct() {
 		//parent::__construct();
-		$db = new DB();
+		$this->db = new DB();
 	}
   /* [PRODUCTS] */
   function pGet () {
   // pGet () : get all products
 
     $sql = "SELECT * FROM 'products'";
-    return $db->fetch($sql, null, "product_id");
+    return $this->db->fetch($sql, null, "product_id");
+	  //debugging
+	  print_r($this->db);
   }
 
   function pAdd ($name, $img, $desc, $price) {

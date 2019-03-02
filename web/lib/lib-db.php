@@ -97,6 +97,8 @@ catch (PDOException $ex)
     }
     $stmt = null;
     return $result;
+	  //for debugging
+	  print_r($result);
   }
 }
 ?>
