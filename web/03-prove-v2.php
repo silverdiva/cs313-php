@@ -27,7 +27,6 @@
 ?>
 
 <?
-//*******......learn how to use DEFINE PATH and require DIR.....*******//
 require 'lib/lib-db.php';
 require 'lib/lib-cart.php';
 $cartLib = new Cart();
