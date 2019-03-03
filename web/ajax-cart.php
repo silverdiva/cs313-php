@@ -68,7 +68,7 @@ switch ($_POST['req']) {
     </table>
     <br><br>
     <a class="button" href="checkout.php"> Checkout</a>
-    <a class="button" href="03-prove.php"> Back to Shopping</a>
+    <a class="button" href="03-prove-v2.php"> Back to Shopping</a>
     <?php if ($total > 0) { ?>
     <form id="cart-checkout" onsubmit="return cart.checkout();">
         <!--
