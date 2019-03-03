@@ -24,6 +24,14 @@ catch (PDOException $ex)
 }
 
 ?>
+	
+	?>
+  
+   <?php
+    include 'responseForPatient.php';
+    $this->newObj = new Patient;
+    $this->pats = $newObj->getPatients();
+?>
 
 	<!DOCTYPE html>
 	<html>
@@ -48,51 +56,41 @@ catch (PDOException $ex)
 		</header>
 
 		<div class="container">
-			<h3>Employee Test:</h3>
-			<li><a href="employee.php">Return Data as a Table</a></li>
+			<table id="patient_grid" class="table" width="100%" cellspacing="0">
+            <thead>
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Patient Visit</th>
+                    <th>Patient Symptom</th>
 
-			<h3>Stock Test:</h3>
-			<li><a href="stock.php">Return Data as a Table</a></li>
-
-			<h3>Contact Test:</h3>
-			<li><a href="contact.php">Return Data as a Table</a></li>
-
-			<form action="" method="post">
-
-				Patient Name: <input type="text" name="firstname">
-				<input type="submit" name="submit" value="Submit">
-
-
-			</form>
-
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach($emps as $key => $emp) :?>
+                <tr>
+                    <td><?php echo $emp['patient_firstname'] ?></td>
+                    <td><?php echo $emp['patient_lastname'] ?></td>
+                    <td><?php echo $emp['patient_visit_date'] ?></td>
+                    <td><?php echo $emp['symptom_name'] ?></td>
+                    <td><div class="btn-group" data-toggle="buttons"><a href="#" target="_blank" class="btn btn-warning btn-xs">Edit</a><a href="#" target="_blank" class="btn btn-danger btn-xs">Delete</a><a href="#" target="_blank" class="btn btn-primary btn-xs">View</a></div></td>
+                </tr>
+            <?php endforeach;?>
+            </tbody>
+        </table>
 
 			<?php
-if($_POST['firstname'] != "")
+if($_POST['patient_firstname'] != "")
 {
     foreach ($db->query('SELECT * FROM patient_2 WHERE patient_firstname =\'' . $_POST['firstname'] . '\'') as $row)
     {
-    
-    //*****  another way to do this:  ******//
-        
-    //create a variable above the foreach with the value of the query string 
-        
-     //$queryString = 'SELECT * FROM patient_2 WHERE patient_firstname =\'' . $_POST['firstname'] . '\'';
-    
-     //$queryString = 'SELECT * FROM patient_2' =\'' . $_POST['firstname'] . '\'' .  $_POST['lasttname'] . '\'' ;
-    
-    //then do an alert on the query, and then give the variable to the query command
-        //echo "<h1>" . $queryString . "/<h1>";
-    
-        //foreach ($db->query($queryString) as $row)
-        //{
-        
-    //***************************************//
+
               
     echo "<strong>" . $row['patient_firstname'] . " " . $row['patient_lastname'] . " - </strong>";
     echo "<a href='05-prove-patientListDetails.php?id=". $row['patient_id'] . "'> 'Patient Details' </a>";
     echo '<br/>';
     //for debugging
-    //print_r($row);
+    print_r($row);
     }
 }
 

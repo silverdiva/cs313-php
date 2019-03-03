@@ -22,11 +22,16 @@ catch (PDOException $ex)
 }
 ?>
   
-   <?php
-    include("responseForEmployee.php");
+<?php
+    include 'responseForEmployee.php';
     $this->newObj = new Employee;
     $this->emps = $newObj->getEmployees();
 ?>
+ 
+<?		
+require 'lib/lib-db.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
