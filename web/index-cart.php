@@ -22,7 +22,7 @@
 		// the details of the exception.
 		echo "Error connecting to DB. Details: $ex";
 		die();
-		print_r($ex);
+		//print_r($ex);
 }    
 ?>
 
