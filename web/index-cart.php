@@ -31,7 +31,7 @@
 session_start();
 require 'lib/lib-db.php';
 require 'lib/lib-cart.php';
-$cartLib = new Cart();
+$cartLib = new Cart;
 $products = $cartLib->pGet();
 ?>
 
