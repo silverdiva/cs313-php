@@ -25,12 +25,12 @@ catch (PDOException $ex)
 
 ?>
 	
-	?>
+
   
-   <?php
+<?php
     include 'responseForPatient.php';
     $this->newObj = new Patient;
-    $this->pats = $newObj->getPatients();
+    $this->pats = $newObj->getPatient();
 ?>
 
 	<!DOCTYPE html>
@@ -67,12 +67,12 @@ catch (PDOException $ex)
                 </tr>
             </thead>
             <tbody>
-                <?php foreach($emps as $key => $emp) :?>
+                <?php foreach($pat as $key => $pat) :?>
                 <tr>
-                    <td><?php echo $emp['patient_firstname'] ?></td>
-                    <td><?php echo $emp['patient_lastname'] ?></td>
-                    <td><?php echo $emp['patient_visit_date'] ?></td>
-                    <td><?php echo $emp['symptom_name'] ?></td>
+                    <td><?php echo $pat['patient_firstname'] ?></td>
+                    <td><?php echo $pat['patient_lastname'] ?></td>
+                    <td><?php echo $pat['patient_visit_date'] ?></td>
+                    <td><?php echo $pat['symptom_name'] ?></td>
                     <td><div class="btn-group" data-toggle="buttons"><a href="#" target="_blank" class="btn btn-warning btn-xs">Edit</a><a href="#" target="_blank" class="btn btn-danger btn-xs">Delete</a><a href="#" target="_blank" class="btn btn-primary btn-xs">View</a></div></td>
                 </tr>
             <?php endforeach;?>

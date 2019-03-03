@@ -1,5 +1,5 @@
 <?php
-class Patients {
+class Patient {
     protected $conn;
     protected $data = array();
     function __construct() {
@@ -9,7 +9,7 @@ class Patients {
                     $db->conn = $db;
     }
    
-    public function getPatients() {
+    public function getPatient() {
                     $sql = "SELECT * FROM patient_2";
                     $queryRecords = pg_query($db->conn, $sql) or die("error to fetch patient data");
                     $data = pg_fetch_all($queryRecords);
