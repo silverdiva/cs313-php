@@ -1,14 +1,9 @@
 <?php
 /* [INIT] */
 session_start();
-//*******......learn how to use DEFINE PATH and require DIR.....*******//
-//require __DIR__ . DIRECTORY_SEPARATOR . "lib" . DIRECTORY_SEPARATOR . "dbConnect.php";
-//define('PATH_LIB', __DIR__ . DIRECTORY_SEPARATOR);
-//require __PATH_LIB__ . DIRECTORY_SEPARATOR . "lib" . DIRECTORY_SEPARATOR . "lib-db.php";
-	//require "dbConnect";
 require "lib/lib-db.php";
 require "lib/lib-cart.php";
-$cartLib = new Cart();
+$cartLib = new Cart;
 
 /* [HANDLE AJAX REQUEST] */
 switch ($_POST['req']) {
@@ -56,7 +51,7 @@ switch ($_POST['req']) {
             <th>Price</th>
         </tr>
         <?php
-            foreach ($_SESSION['cart'] as $id => $qty) {
+            foreach($_SESSION['cart'] as $id => $qty) {
                 // CALCULATE THE TOTALS
                 $sub = $qty * $products[$id]['product_price'];
                 $total += $sub;
