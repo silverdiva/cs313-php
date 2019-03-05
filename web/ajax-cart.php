@@ -3,7 +3,7 @@
 session_start();
 require "lib/lib-db.php";
 require "lib/lib-cart.php";
-$cartLib = new Cart;
+$cartLib = new Cart('cart)';
 
 /* [HANDLE AJAX REQUEST] */
 switch ($_POST['req']) {
